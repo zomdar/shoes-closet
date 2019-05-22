@@ -12,7 +12,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 export class AppComponent {
   shoes: Observable<Shoe[]>;
   filterState: FilterState;
-  filters: Observable<Filter[]>;
+  filters: Observable<Filter[]>; 
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;
