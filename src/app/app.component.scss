@@ -30,11 +30,15 @@ mat-sidenav-container {
   grid-area: page-container
 }
 
-mat-sidenav-content {
+.shoe-cards {
   padding: 16px;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, 280px);
+}
+
+.create-shoe-btn {
+  margin: 16px;
 }
 
 mat-card {

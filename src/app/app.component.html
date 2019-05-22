@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="main-toolbar">
   <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-  <h1 class="main-app-name">Shoes Directory</h1>
+  <h1 class="main-app-name">Shoes Closet</h1>
   <span class="toolbar-spacer"></span>
   <button mat-button [matMenuTriggerFor]="menu">
     <mat-icon class="account-icon">account_circle</mat-icon>
@@ -21,22 +21,25 @@
     <app-side-nav></app-side-nav>
   </mat-sidenav>
   <mat-sidenav-content role="region">
-    <mat-card *ngFor="let shoe of shoes | async">
-      <mat-card-title>{{ shoe.name }}</mat-card-title>
-      <img mat-card-image [src]="shoe.photo">
-      <mat-card-content>
-        <dl>
-          <dt class="mat-small">Year</dt>
-          <dd class="mat-body-2">{{ shoe.year }}</dd>
-          <dt class="mat-small">Brand</dt>
-          <dd class="mat-body-2">{{ shoe.brand }}</dd>
-          <dt class="mat-small">Size</dt>
-          <dd class="mat-body-2">{{ shoe.size }}</dd>
-          <dt class="mat-small">SKU</dt>
-          <dd class="mat-body-2">{{ shoe.sku }}</dd>
-        </dl>
-      </mat-card-content>
-    </mat-card>
+    <button class="create-shoe-btn" color="warn" mat-raised-button>Add Shoe +</button>
+    <div class="shoe-cards">
+      <mat-card *ngFor="let shoe of shoes | async">
+        <mat-card-title>{{ shoe.name }}</mat-card-title>
+        <img mat-card-image [src]="shoe.photo">
+        <mat-card-content>
+          <dl>
+            <dt class="mat-small">Year</dt>
+            <dd class="mat-body-2">{{ shoe.year }}</dd>
+            <dt class="mat-small">Brand</dt>
+            <dd class="mat-body-2">{{ shoe.brand }}</dd>
+            <dt class="mat-small">Size</dt>
+            <dd class="mat-body-2">{{ shoe.size }}</dd>
+            <dt class="mat-small">SKU</dt>
+            <dd class="mat-body-2">{{ shoe.sku }}</dd>
+          </dl>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
