@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ShoeService } from '../shoe.service';
+import { ShoeService } from '../shoes-service/shoe.service';
 import { Observable } from 'rxjs';
 import { Shoe, FilterState, Filter, Option } from '../types';
 
