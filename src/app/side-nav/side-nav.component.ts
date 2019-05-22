@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ShoeService } from '../shoes-service/shoe.service';
+import { ShoesFilterService } from '../shoes-service/shoes-filter-service.service';
 import { Observable } from 'rxjs';
 import { Shoe, FilterState, Filter, Option } from '../types';
 
@@ -13,7 +13,7 @@ export class SideNavComponent {
   filterState: FilterState;
   filters: Observable<Filter[]>;
 
-  constructor(shoeService: ShoeService) {
+  constructor(shoeService: ShoesFilterService) {
     this.shoes = shoeService.shoes;
     this.filterState = shoeService.filterState;
     this.filters = shoeService.filters;
