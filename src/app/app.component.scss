@@ -1,0 +1,68 @@
+:host {
+  height: 100vh;
+  display: grid;
+  grid-template: "toolbar"
+                 "page-container" 1fr;
+}
+
+h1 {
+  grid-area: title;
+}
+
+mat-toolbar {
+  z-index: 2;
+  // grid-area: toolbar;
+  // display: grid;
+  // grid-template:  "title menu" auto
+  // / 1fr 50px;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.account-icon {
+  padding: 0 14px;
+}
+
+
+mat-sidenav-container {
+  grid-area: page-container
+}
+
+mat-sidenav-content {
+  padding: 16px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 280px);
+}
+
+mat-card {
+  width: 232px;
+}
+
+[mat-card-image] {
+  height: 225px;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+dd {
+  margin-inline-start: 0;
+}
+
+mat-sidenav {
+  width: 310px;
+}
+
+.menu-button {
+  grid-area: menu;
+}
+
+mat-menu {
+  display: none
+}
+
