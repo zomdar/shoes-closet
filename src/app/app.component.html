@@ -12,8 +12,7 @@
 
 <mat-sidenav-container>
   <mat-sidenav 
-      #snav 
-      opened
+      #snav
       [mode]="mobileQuery.matches ? 'over' : 'side'"
       [fixedInViewport]="mobileQuery.matches" 
       fixedTopGap="56"
@@ -21,7 +20,7 @@
     <app-side-nav></app-side-nav>
   </mat-sidenav>
   <mat-sidenav-content role="region">
-    <button class="create-shoe-btn" color="warn" mat-raised-button>Add Shoe +</button>
+    <button class="create-shoe-btn" color="warn" (click)="openAddShoeModal()" mat-raised-button>Add Shoe +</button>
     <div class="shoe-cards">
       <mat-card *ngFor="let shoe of shoes | async">
         <mat-card-title>{{ shoe.name }}</mat-card-title>
@@ -34,8 +33,6 @@
             <dd class="mat-body-2">{{ shoe.brand }}</dd>
             <dt class="mat-small">Size</dt>
             <dd class="mat-body-2">{{ shoe.size }}</dd>
-            <dt class="mat-small">SKU</dt>
-            <dd class="mat-body-2">{{ shoe.sku }}</dd>
           </dl>
         </mat-card-content>
       </mat-card>

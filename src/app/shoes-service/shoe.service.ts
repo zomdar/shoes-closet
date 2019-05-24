@@ -1,29 +1,33 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Shoe } from '../types';
+import { Shoe } from '../models/shoes.interface';
 import * as _ from 'lodash';
 import { Observable } from 'rxjs';
 import { tap, map, share } from 'rxjs/operators';
+
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoeService {
-  shoes: Observable<Shoe[]>;
+  shoes: Observable<any[]>;
+  _db:AngularFirestore;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, db: AngularFirestore) {
+    this._db = db;
     this.getShoes();
   }
 
-  private getShoes() {
-    this.shoes = this.http.get<Shoe[]>('assets/shoes.json').pipe(
+  
+  public getShoes() {
+    this.shoes = this._db.collection('/shoes').valueChanges().pipe(
       share()
     );
   }
 
-  private createShoes( shoes: Shoe[]) {
-
+  public createShoes(shoe: Shoe) {
+    this._db.collection('/shoes').add(shoe);
   }
-
 
 }

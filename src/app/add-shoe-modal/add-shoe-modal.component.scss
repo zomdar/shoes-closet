@@ -1,0 +1,13 @@
+.add-shoes-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-shoes-container > * {
+  width: 100%;
+}
+
+.btn-spacer {
+    flex: 1 1 auto;
+}
+  

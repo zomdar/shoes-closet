@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Shoes Info</h1>
+<form (ngSubmit)="handleSubmit(form.value, form.valid)" #form="ngForm" novalidate>
+  <div class="add-shoes-container" mat-dialog-content>
+      <!-- <mat-form-field class="image-link">
+        <input matInput placeholder="Image Link">
+      </mat-form-field>
+      <mat-form-field class="name">
+        <input matInput placeholder="Shoes Name">
+      </mat-form-field>
+      <mat-form-field class="brand">
+        <input matInput placeholder="Brand">
+      </mat-form-field>
+      <mat-form-field class="year">
+        <input matInput placeholder="Year">
+      </mat-form-field> -->
+      <mat-form-field class="name">
+        <input 
+          matInput
+          placeholder="Shoes Name"
+          type="text" 
+          name="name"
+          [formControl]="name"
+          required>
+        <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <span class="btn-spacer"></span>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <!-- <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button> -->
+    <button class="primary" type="submit" mat-button>
+      Add
+    </button>
+  </div>
+</form>
+
