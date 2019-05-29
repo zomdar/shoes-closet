@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddShoeModalComponent } from './add-shoe-modal.component';
+import { AddShoeFormComponent } from './add-shoe-form.component';
 
-describe('AddShoeModalComponent', () => {
-  let component: AddShoeModalComponent;
-  let fixture: ComponentFixture<AddShoeModalComponent>;
+describe('AddShoeFormComponent', () => {
+  let component: AddShoeFormComponent;
+  let fixture: ComponentFixture<AddShoeFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddShoeModalComponent ]
+      declarations: [ AddShoeFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddShoeModalComponent);
+    fixture = TestBed.createComponent(AddShoeFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

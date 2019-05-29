@@ -1,0 +1,54 @@
+<h1 mat-dialog-title>Shoes Info</h1>
+<form [formGroup]="addShoesForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="add-shoes-container" mat-dialog-content>
+      <mat-form-field class="name">
+        <input 
+          placeholder="Shoes Name"
+          type="text" 
+          name="name"
+          formControlName="name"
+          matInput
+          required>
+        <!-- <mat-error *ngIf="addShoesForm.value.name.invalid">{{getErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+      <mat-form-field class="photo">
+        <input placeholder="Image Link"
+                type="text" 
+                name="photo"
+                formControlName="photo"
+                matInput
+                required>
+      </mat-form-field>
+      <mat-form-field class="brand">
+        <input placeholder="Brand"
+                type="text" 
+                name="brand"
+                formControlName="brand"
+                matInput
+                required>
+      </mat-form-field>
+      <mat-form-field class="size">
+          <input placeholder="Size"
+                  type="number" 
+                  name="size"
+                  formControlName="size"
+                  matInput
+                  required>
+      </mat-form-field>
+      <mat-form-field class="year">
+          <input placeholder="Year"
+                  type="number" 
+                  name="year"
+                  formControlName="year"
+                  matInput
+                  required>
+      </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <span class="btn-spacer"></span>
+    <!-- <button mat-button (click)="onNoClick()">Cancel</button> -->
+    <button class="primary" type="submit" mat-button>
+      Add
+    </button>
+  </div>
+</form>

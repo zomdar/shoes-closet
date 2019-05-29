@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 import { Shoe } from '../app/models/shoes.interface';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatDialog } from '@angular/material';
-import { AddShoeModalComponent } from './add-shoe-modal/add-shoe-modal.component';
+// import { AddShoeModalComponent } from './add-shoe-modal/add-shoe-modal.component';
+import { AddShoeContainerComponent } from './containers/add-shoe-container/add-shoe-container.component';
 
 
 @Component({
@@ -13,18 +14,19 @@ import { AddShoeModalComponent } from './add-shoe-modal/add-shoe-modal.component
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  shoes: Observable<Shoe[]>;
+  // shoes: Observable<Shoe[]>;
+  shoes: Observable<any[]>;
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;
 
   constructor(shoeService: ShoeService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public dialog: MatDialog) {
-    this.shoes = shoeService.shoes;
+    this.shoes = shoeService.getShoes();
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
   }
 
   openAddShoeModal(): void {
-    const dialogRef = this.dialog.open(AddShoeModalComponent, {
+    const dialogRef = this.dialog.open(AddShoeContainerComponent, {
       width: '380px'
     });
 

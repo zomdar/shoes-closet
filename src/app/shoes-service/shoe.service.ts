@@ -16,15 +16,24 @@ export class ShoeService {
 
   constructor(private http: HttpClient, db: AngularFirestore) {
     this._db = db;
-    this.getShoes();
+  }
+  
+  public getShoes(): Observable<any> {
+    return this._db.collection('/shoes')
+                  .valueChanges()
+                  .pipe(
+                    share()
+                  );
   }
 
-  
-  public getShoes() {
-    this.shoes = this._db.collection('/shoes').valueChanges().pipe(
-      share()
-    );
-  }
+  // public getShoe(id: string): Observable<any> {
+  //   const shoesDocuments = this._db.collection('/shoes/' + id);
+  //   return shoesDocuments.snapshotChanges()
+  //                       .pipe(
+  //                         share()
+  //                       );
+  // }
+
 
   public createShoes(shoe: Shoe) {
     this._db.collection('/shoes').add(shoe);
