@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { FormControl, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material';
 
 import { ShoeService } from '../../shoes-service/shoe.service';
 
@@ -18,8 +17,13 @@ export class AddShoeContainerComponent implements OnInit {
   
   ngOnInit() {
     // getting the first shoe in the collection
-    this.shoeService.getShoes()
-                    .subscribe((data: Shoe) => this.shoes = data[0]);
+    // this.shoeService.getShoes()
+    //                 .subscribe((data: Shoe) => this.shoes = data[0]);
+  }
+
+  onUpdateShoe(event: Shoe) {
+    // this.shoeService.createShoes(event);
+    console.log(event);
   }
 
 }

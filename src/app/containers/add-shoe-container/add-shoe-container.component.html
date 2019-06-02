@@ -1,5 +1,6 @@
 <div>
   <app-add-shoe-form
-  [detail]="shoes">
+    [detail]="shoes"
+    (update)="onUpdateShoe($event)">
   </app-add-shoe-form>
 </div>

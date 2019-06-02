@@ -1,53 +1,66 @@
 <h1 mat-dialog-title>Shoes Info</h1>
-<form [formGroup]="addShoesForm" (ngSubmit)="onSubmit()" novalidate>
+<form #form="ngForm" (ngSubmit)="handleSubmit(form.value, form.valid)" novalidate>
   <div class="add-shoes-container" mat-dialog-content>
       <mat-form-field class="name">
-        <input 
-          placeholder="Shoes Name"
-          type="text" 
-          name="name"
-          formControlName="name"
-          matInput
-          required>
-        <!-- <mat-error *ngIf="addShoesForm.value.name.invalid">{{getErrorMessage()}}</mat-error> -->
+        <input
+            placeholder="Shoes Name"
+            type="text"
+            name="name"
+            #name="ngModel"
+            [ngModel]="detail?.name"
+            matInput
+            required>
+        <mat-error *ngIf="name.errors?.required && name.dirty">You must enter a value</mat-error>
       </mat-form-field>
       <mat-form-field class="photo">
-        <input placeholder="Image Link"
-                type="text" 
-                name="photo"
-                formControlName="photo"
-                matInput
-                required>
+          <input
+            placeholder="Photo Link"
+            type="text"
+            name="photo"
+            #photo="ngModel"
+            [ngModel]="detail?.photo"
+            matInput
+            required>
+        <mat-error *ngIf="photo.errors?.required && photo.dirty">You must enter a value</mat-error>
       </mat-form-field>
       <mat-form-field class="brand">
-        <input placeholder="Brand"
-                type="text" 
-                name="brand"
-                formControlName="brand"
-                matInput
-                required>
+        <input
+            placeholder="Brand"
+            type="text"
+            name="brand"
+            #brand="ngModel"
+            [ngModel]="detail?.brand"
+            matInput
+            required>
+        <mat-error *ngIf="brand.errors?.required && brand.dirty">You must enter a value</mat-error>
       </mat-form-field>
       <mat-form-field class="size">
-          <input placeholder="Size"
-                  type="number" 
-                  name="size"
-                  formControlName="size"
-                  matInput
-                  required>
+        <input
+            placeholder="Size"
+            type="number"
+            name="size"
+            #size="ngModel"
+            [ngModel]="detail?.size"
+            matInput
+            required>
+        <mat-error *ngIf="size.errors?.required && size.dirty">You must enter a value</mat-error>
       </mat-form-field>
       <mat-form-field class="year">
-          <input placeholder="Year"
-                  type="number" 
-                  name="year"
-                  formControlName="year"
-                  matInput
-                  required>
+        <input
+            placeholder="Year"
+            type="number"
+            name="year"
+            #year="ngModel"
+            [ngModel]="detail?.year"
+            matInput
+            required>
+        <mat-error *ngIf="year.errors?.required && year.dirty">You must enter a value</mat-error>
       </mat-form-field>
   </div>
   <div mat-dialog-actions>
     <span class="btn-spacer"></span>
-    <!-- <button mat-button (click)="onNoClick()">Cancel</button> -->
-    <button class="primary" type="submit" mat-button>
+    <button (click)="onNoClick()" mat-flat-button>Cancel</button>
+    <button color="primary" type="submit" [disabled]="form.invalid" mat-flat-button>
       Add
     </button>
   </div>
