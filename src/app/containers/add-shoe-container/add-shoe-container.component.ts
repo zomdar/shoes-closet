@@ -22,8 +22,7 @@ export class AddShoeContainerComponent implements OnInit {
   }
 
   onUpdateShoe(event: Shoe) {
-    // this.shoeService.createShoes(event);
-    console.log(event);
+    this.shoeService.createShoes(event);
   }
 
 }

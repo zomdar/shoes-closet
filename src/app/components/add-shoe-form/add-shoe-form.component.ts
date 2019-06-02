@@ -31,7 +31,9 @@ export class AddShoeFormComponent implements OnInit {
   handleSubmit(shoe: Shoe, isValid: boolean) {
     if(isValid) {
       this.update.emit(shoe);
+      this.dialogRef.close();
     }
+    
   }
 
 }

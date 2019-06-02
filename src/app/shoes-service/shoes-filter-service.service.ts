@@ -6,6 +6,10 @@ import * as _ from 'lodash';
 import { Observable } from 'rxjs';
 import { tap, map, share } from 'rxjs/operators';
 
+import { AngularFirestore } from '@angular/fire/firestore';
+
+import { ShoeService } from '../shoes-service/shoe.service';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,11 +17,11 @@ export class ShoesFilterService {
   shoes: Observable<Shoe[]>;
   filterState: FilterState = {};
   filters: Observable<Filter[]>;
+  _db:AngularFirestore;
 
-  constructor(http: HttpClient) {
-    this.shoes = http.get<Shoe[]>('assets/shoes.json').pipe(
-      share()
-    );
+  constructor(http: HttpClient, db: AngularFirestore, private shoeService: ShoeService) {
+    this._db = db;
+    this.shoes = this.shoeService.getShoes();
     this.filters = this.shoes.pipe(
       map(shoes => this.createFilters(shoes))
     );
