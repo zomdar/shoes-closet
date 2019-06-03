@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //containers
 import { AddShoeContainerComponent } from './containers/add-shoe-container/add-shoe-container.component';
 import { AddShoeFormComponent } from './components/add-shoe-form/add-shoe-form.component';
+import { DeleteShoeModalComponent } from './delete-shoe-modal/delete-shoe-modal.component';
 
 //components
 
@@ -28,6 +29,7 @@ import { AddShoeFormComponent } from './components/add-shoe-form/add-shoe-form.c
     SideNavComponent,
     AddShoeContainerComponent,
     AddShoeFormComponent,
+    DeleteShoeModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,10 @@ import { AddShoeFormComponent } from './components/add-shoe-form/add-shoe-form.c
     FormsModule,
     ReactiveFormsModule
   ],
-  entryComponents: [AddShoeContainerComponent],
+  entryComponents: [
+    AddShoeContainerComponent,
+    DeleteShoeModalComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

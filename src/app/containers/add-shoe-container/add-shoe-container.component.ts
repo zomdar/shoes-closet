@@ -17,8 +17,8 @@ export class AddShoeContainerComponent implements OnInit {
   
   ngOnInit() {
     // getting the first shoe in the collection
-    // this.shoeService.getShoes()
-    //                 .subscribe((data: Shoe) => this.shoes = data[0]);
+    // this.shoeService.getShoe('6F2XhVLJl99iIe2n6sKA')
+    //                 .subscribe((data: Shoe) => this.shoes = data);
   }
 
   onUpdateShoe(event: Shoe) {

@@ -1,0 +1,10 @@
+<div mat-dialog-content>
+  <p>Are you sure you want to delete <strong>{{ data.shoeName }}</strong> ?</p>
+</div>
+<div mat-dialog-actions>
+    <span class="btn-spacer"></span>
+    <button (click)="onNoClick()" mat-button>Cancel</button>
+    <button color="warn" (click)="handleDelete(data.id)" mat-button>
+      Delete
+    </button>
+</div>

@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 import { Shoe } from '../app/models/shoes.interface';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatDialog } from '@angular/material';
-// import { AddShoeModalComponent } from './add-shoe-modal/add-shoe-modal.component';
-import { AddShoeContainerComponent } from './containers/add-shoe-container/add-shoe-container.component';
 
+import { AddShoeContainerComponent } from './containers/add-shoe-container/add-shoe-container.component';
+import { DeleteShoeModalComponent } from './delete-shoe-modal/delete-shoe-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -14,14 +14,16 @@ import { AddShoeContainerComponent } from './containers/add-shoe-container/add-s
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  // shoes: Observable<Shoe[]>;
-  shoes: Observable<any[]>;
+
+  shoes: Observable<Shoe[]>;
+  shoeService;
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;
 
   constructor(shoeService: ShoeService, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public dialog: MatDialog) {
     this.shoes = shoeService.getShoes();
+    this.shoeService = shoeService;
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
   }
 
@@ -29,10 +31,13 @@ export class AppComponent {
     const dialogRef = this.dialog.open(AddShoeContainerComponent, {
       width: '380px'
     });
+  }
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log('The dialog was closed');
-    // });
+  deleteShoe(id: string, name: string): void {
+    const dialogRef = this.dialog.open(DeleteShoeModalComponent, {
+      width: '380px',
+      data: {id: id, shoeName: name}
+    });
   }
 
   ngOnDestroy(): void {
