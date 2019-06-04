@@ -32,19 +32,22 @@ export class ShoeService {
                   );
   }
 
-  // public getShoe(id: string): Observable<any> {
-    // const shoesDocuments = this._db.doc('/shoes/' + '6F2XhVLJl99iIe2n6sKA');
-    // return shoesDocuments.snapshotChanges()
-    //                     .pipe(
-    //                       map((response: Response) => response.json());
-    //                     );
-  // }
+  public getShoe(id: string): Observable<any> {
+    const shoesDocuments = this._db.doc('/shoes/' + '6F2XhVLJl99iIe2n6sKA');
+    return shoesDocuments.snapshotChanges()
+                        .pipe(
+                          share()
+                        );
+                        // .pipe(
+                        //   map((response: Response) => response.json());
+                        // );
+  }
 
   public createShoes(shoe: Shoe) {
     this._db.collection('/shoes').add(shoe);
   }
 
-  public updatePolicy(shoe: Shoe, shoeId: string){
+  public updateShoe(shoe: Shoe, shoeId: string){
     this._db.doc('/shoes/' + shoeId).update(shoe);
   }
 

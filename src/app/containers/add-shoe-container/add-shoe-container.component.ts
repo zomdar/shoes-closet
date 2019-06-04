@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { ShoeService } from '../../shoes-service/shoe.service';
 
@@ -13,16 +13,24 @@ import { Shoe } from '../../models/shoes.interface';
 export class AddShoeContainerComponent implements OnInit {
   shoes: Shoe;
 
-  constructor(public dialogRef: MatDialogRef<AddShoeContainerComponent>, private shoeService: ShoeService) {}
+  constructor(public dialogRef: MatDialogRef<AddShoeContainerComponent>, 
+              @Inject(MAT_DIALOG_DATA) public data: any,
+              private shoeService: ShoeService) {}
   
   ngOnInit() {
     // getting the first shoe in the collection
-    // this.shoeService.getShoe('6F2XhVLJl99iIe2n6sKA')
-    //                 .subscribe((data: Shoe) => this.shoes = data);
+    if(this.data.isEdit) {
+      this.shoeService.getShoe(this.data.id)
+                      .subscribe((data: Shoe) => this.shoes = data);
+    }
   }
 
   onUpdateShoe(event: Shoe) {
-    this.shoeService.createShoes(event);
+    if(this.data.isEdit) {
+      this.shoeService.updateShoe(event, this.data.id);
+    } else {
+      this.shoeService.createShoes(event);
+    }
   }
 
 }

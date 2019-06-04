@@ -15,6 +15,7 @@ import { Shoe } from '../../models/shoes.interface';
 export class AddShoeFormComponent implements OnInit {
   @Input()
   detail: Shoe;
+  isEdit: boolean;
 
   @Output()
   update: EventEmitter<Shoe> = new EventEmitter<Shoe>();

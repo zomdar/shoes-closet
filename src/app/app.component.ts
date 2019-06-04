@@ -18,6 +18,7 @@ export class AppComponent {
   shoes: Observable<Shoe[]>;
   shoeService;
   mobileQuery: MediaQueryList;
+  editShoe: boolean;
 
   private _mobileQueryListener: () => void;
 
@@ -27,9 +28,10 @@ export class AppComponent {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
   }
 
-  openAddShoeModal(): void {
+  openAddShoeModal(id: string, name: string, edit: boolean): void {
     const dialogRef = this.dialog.open(AddShoeContainerComponent, {
-      width: '380px'
+      width: '380px',
+      data: {id: id, shoeName: name, isEdit: edit}
     });
   }
 
