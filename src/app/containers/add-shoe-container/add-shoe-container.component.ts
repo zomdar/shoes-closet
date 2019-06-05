@@ -20,8 +20,15 @@ export class AddShoeContainerComponent implements OnInit {
   ngOnInit() {
     // getting the first shoe in the collection
     if(this.data.isEdit) {
-      this.shoeService.getShoe(this.data.id)
-                      .subscribe((data: Shoe) => this.shoes = data);
+      this.shoeService.getShoes()
+                      .subscribe((snapshot) => {
+                        snapshot.forEach(doc => {
+                          if(doc.id === this.data.id) {
+                            this.shoes = doc;
+                            return doc;
+                          }
+                        });
+                      })
     }
   }
 
