@@ -15,7 +15,6 @@ import { Shoe } from '../../models/shoes.interface';
 export class AddShoeFormComponent implements OnInit {
   @Input()
   detail: Shoe;
-  isEdit: boolean;
 
   @Output()
   update: EventEmitter<Shoe> = new EventEmitter<Shoe>();
@@ -24,6 +23,10 @@ export class AddShoeFormComponent implements OnInit {
   
   ngOnInit() {
   }
+
+  // submitButtonLabel() {
+  //   return this.isEdit === 'edit' ? 'Edit' : 'Add';
+  // }
 
   onNoClick(): void {
     this.dialogRef.close();

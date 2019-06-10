@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddShoeContainerComponent } from './containers/add-shoe-container/add-shoe-container.component';
 import { AddShoeFormComponent } from './components/add-shoe-form/add-shoe-form.component';
 import { DeleteShoeModalComponent } from './delete-shoe-modal/delete-shoe-modal.component';
+import { FilterPipe } from './filter.pipe';
 
 //components
 
@@ -30,6 +31,7 @@ import { DeleteShoeModalComponent } from './delete-shoe-modal/delete-shoe-modal.
     AddShoeContainerComponent,
     AddShoeFormComponent,
     DeleteShoeModalComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

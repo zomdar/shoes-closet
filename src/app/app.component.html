@@ -17,12 +17,12 @@
       [fixedInViewport]="mobileQuery.matches" 
       fixedTopGap="56"
       role="region">
-    <app-side-nav></app-side-nav>
+    <app-side-nav (searchModelChange)=updateSearchModel($event)></app-side-nav>
   </mat-sidenav>
   <mat-sidenav-content role="region">
     <button class="create-shoe-btn" color="warn" (click)="openAddShoeModal(null, null, false)" mat-raised-button>Add Shoe +</button>
     <div class="shoe-cards">
-      <mat-card *ngFor="let shoe of shoes | async">
+      <mat-card *ngFor="let shoe of shoes | async | searchFilter: searchModel">
         <mat-card-title>{{ shoe.name }}</mat-card-title>
         <img mat-card-image [src]="shoe.photo">
         <mat-card-content>
@@ -43,6 +43,7 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
 
 <router-outlet></router-outlet>
 

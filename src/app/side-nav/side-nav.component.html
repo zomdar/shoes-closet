@@ -1,5 +1,9 @@
 <mat-form-field class="search">
-  <input matInput placeholder="Search shoes">
+  <input 
+    matInput 
+    placeholder="Search shoes"
+    [ngModel]="searchModel" 
+    (ngModelChange)="updateSearchModel($event)">
 </mat-form-field>
 <mat-divider></mat-divider>
 <ng-container *ngFor="let filter of filters | async; last as last">

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, Input } from '@angular/core';
 import { ShoeService } from './shoes-service/shoe.service';
 import { Observable } from 'rxjs';
 import { Shoe } from '../app/models/shoes.interface';
@@ -15,6 +15,7 @@ import { DeleteShoeModalComponent } from './delete-shoe-modal/delete-shoe-modal.
 })
 export class AppComponent {
 
+  searchModel: Shoe;
   shoes: Observable<Shoe[]>;
   shoeService;
   mobileQuery: MediaQueryList;
@@ -40,6 +41,10 @@ export class AppComponent {
       width: '380px',
       data: {id: id, shoeName: name}
     });
+  }
+
+  updateSearchModel(event: Shoe) {
+    this.searchModel = event;
   }
 
   ngOnDestroy(): void {
