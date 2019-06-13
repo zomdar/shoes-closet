@@ -1,9 +1,3 @@
-:host {
-  height: 100vh;
-  display: grid;
-  grid-template: "toolbar"
-                 "page-container" 1fr;
-}
 
 h1 {
   grid-area: title;
@@ -25,37 +19,8 @@ mat-toolbar {
   padding: 0 14px;
 }
 
-
 mat-sidenav-container {
   grid-area: page-container
-}
-
-.shoe-cards {
-  padding: 16px;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, 280px);
-}
-
-.create-shoe-btn {
-  margin: 16px;
-}
-
-mat-card {
-  width: 232px;
-}
-
-[mat-card-image] {
-  height: 195px;
-}
-
-dl {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-}
-
-dd {
-  margin-inline-start: 0;
 }
 
 mat-sidenav {

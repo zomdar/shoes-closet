@@ -1,0 +1,20 @@
+<div class="shoe-cards">
+  <mat-card *ngFor="let shoe of cardDetail | async">
+    <mat-card-title>{{ shoe.name }}</mat-card-title>
+    <img mat-card-image [src]="shoe.photo">
+    <mat-card-content>
+      <dl>
+        <dt class="mat-small">Year</dt>
+        <dd class="mat-body-2">{{ shoe.year }}</dd>
+        <dt class="mat-small">Brand</dt>
+        <dd class="mat-body-2">{{ shoe.brand }}</dd>
+        <dt class="mat-small">Size</dt>
+        <dd class="mat-body-2">{{ shoe.size }}</dd>
+      </dl>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="" (click)="openAddShoeModal(shoe.id, shoe.name, true)" mat-button>Edit</button>
+      <button class="" (click)="deleteShoe(shoe.id, shoe.name)" mat-button>Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
