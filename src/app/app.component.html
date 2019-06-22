@@ -2,12 +2,31 @@
   <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
   <h1 class="main-app-name">Shoes Closet</h1>
   <span class="toolbar-spacer"></span>
-  <button mat-button [matMenuTriggerFor]="menu">
-    <mat-icon class="account-icon">account_circle</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item class="menu-button">Log out</button>
-  </mat-menu>
+
+
+  <div *ngIf="auth.user$ | async; then authenticated else guest">
+      <!-- template will replace this div -->
+  </div>
+
+  <!-- User NOT logged in -->
+  <ng-template #guest>
+    <button mat-button *ngIf="auth.user$" (click)="userLogin()">Sign In</button>
+  </ng-template>
+
+  <!-- User logged in -->
+  <ng-template #authenticated>
+  <div *ngIf="auth.user$ | async as user">
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon class="account-icon">account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item class="menu-button" (click)="userLogOut()">Log out</button>
+    </mat-menu>
+  </div>
+  </ng-template>
+
+
+
 </mat-toolbar>
 
 <mat-sidenav-container>
