@@ -6,20 +6,28 @@ import { Observable } from 'rxjs';
 import { tap, map, share } from 'rxjs/operators';
 
 import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoeService {
-  shoes: Observable<Shoe[]>;
+  shoes: Observable<Shoe[]> = null;
   _db: AngularFirestore;
+  userId: string;
 
-  constructor(private http: HttpClient, db: AngularFirestore) {
+  constructor(
+    private afAuth: AngularFireAuth,
+    db: AngularFirestore
+  ) {
     this._db = db;
+    this.afAuth.authState.subscribe(user => {
+      if(user) this.userId = user.uid
+    })
   }
-  
+
   public getShoes(): Observable<any[]> {
-    return this._db.collection('/shoes')
+    return this._db.collection('/shoes').doc(`${this.userId}`).collection('/shoesCollection')
                   .snapshotChanges()
                   .pipe(
                     map((actions: DocumentChangeAction<Shoe>[]) => {
@@ -32,27 +40,17 @@ export class ShoeService {
                   );
   }
 
-  public getShoe(id: string): Observable<any> {
-    const shoesDocuments = this._db.doc('/shoes/' + '6F2XhVLJl99iIe2n6sKA');
-    return shoesDocuments.snapshotChanges()
-                        .pipe(
-                          share()
-                        );
-                        // .pipe(
-                        //   map((response: Response) => response.json());
-                        // );
-  }
-
   public createShoes(shoe: Shoe) {
-    this._db.collection('/shoes').add(shoe);
+    const id = this._db.createId();
+    this._db.collection('/shoes').doc(`${this.userId}`).collection('/shoesCollection').doc(id).set(shoe);
   }
 
   public updateShoe(shoe: Shoe, shoeId: string){
-    this._db.doc('/shoes/' + shoeId).update(shoe);
+    this._db.collection('/shoes').doc(`${this.userId}`).collection('/shoesCollection').doc(shoeId).update(shoe);
   }
 
   public deleteShoe(shoeId: string){
-    this._db.doc('/shoes/' + shoeId).delete();
+    this._db.collection('/shoes').doc(`${this.userId}`).collection('/shoesCollection').doc(shoeId).delete();
   }
 
 }

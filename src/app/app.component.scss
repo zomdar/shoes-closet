@@ -1,3 +1,9 @@
+:host {
+  height: 100vh;
+  display: grid;
+  grid-template: "toolbar"
+                 "page-container" 1fr;
+}
 
 h1 {
   grid-area: title;
