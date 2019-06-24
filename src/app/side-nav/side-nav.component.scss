@@ -1,6 +1,10 @@
 mat-sidenav {
     width: 310px;
 }
+
+.mat-nav-list a.active {
+    background: #E8EAF6;
+}
   
 .search {
     padding: 0 16px;
