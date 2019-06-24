@@ -32,6 +32,8 @@ import { DeleteShoeModalComponent } from './delete-shoe-modal/delete-shoe-modal.
 import { FilterPipe } from './filter.pipe';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoginComponent } from './login/login.component';
+import { NewsContainerComponent } from './containers/news-container/news-container.component';
+import { NewsComponentComponent } from './components/news-component/news-component.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { LoginComponent } from './login/login.component';
     ShoesCardsComponentComponent,
     DashboardComponent,
     UserProfileComponent,
-    LoginComponent
+    LoginComponent,
+    NewsContainerComponent,
+    NewsComponentComponent
   ],
   imports: [
     BrowserModule,

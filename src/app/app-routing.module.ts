@@ -5,10 +5,12 @@ import { AuthGuard } from './auth.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { NewsContainerComponent } from './containers/news-container/news-container.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/news', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },  
+  { path: 'news', component: NewsContainerComponent },
   { path: 'login', component: UserProfileComponent }
 ];
 

@@ -6,7 +6,16 @@
     (ngModelChange)="updateSearchModel($event)">
 </mat-form-field>
 <mat-divider></mat-divider>
-<ng-container *ngFor="let filter of filters | async; last as last">
+
+<mat-nav-list>
+  <a mat-list-item routerLink="/news" routerLinkActive="active">
+    <button mat-icon-button><mat-icon>new_releases</mat-icon></button>News
+  </a>
+  <a mat-list-item routerLink="/dashboard" routerLinkActive="active">
+    <button mat-icon-button><mat-icon>dashboard</mat-icon></button>Dashboard
+  </a>
+</mat-nav-list>
+<!-- <ng-container *ngFor="let filter of filters | async; last as last">
   <mat-list>
     <h3 matSubheader>{{ filter.displayName }}</h3>
 
@@ -30,4 +39,4 @@
     </ng-template>
   </mat-list>
   <mat-divider *ngIf="!last"></mat-divider>
-</ng-container>
+</ng-container> -->
