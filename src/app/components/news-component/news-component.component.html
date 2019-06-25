@@ -1,3 +1,28 @@
-<p>
-  news-component works!
-</p>
+<h1>
+  June
+</h1>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Jordan 1</mat-card-title>
+    <mat-card-subtitle>Retro High Black Gym Red</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://stockx-360.imgix.net/Air-Jordan-1-Retro-High-Black-Gym-Red/Images/Air-Jordan-1-Retro-High-Black-Gym-Red/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1560199780&w=2200" alt="Jordan 1">
+  <mat-card-content *ngIf="!collapsed">
+    <dl>
+      <dt class="mat-small">Release Date</dt>
+      <dd class="mat-body-2">06/29/2019</dd>
+      <dt class="mat-small">Time</dt>
+      <dd class="mat-body-2">10:00 AM</dd>
+      <dt class="mat-small">Site</dt>
+      <dd class="mat-body-2">nike.com</dd>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <!-- <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button> -->
+    <button mat-button (click)="collapsed=!collapsed">Show more</button>
+  </mat-card-actions>
+</mat-card>
+

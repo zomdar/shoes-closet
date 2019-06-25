@@ -1,0 +1,17 @@
+.example-card {
+    max-width: 230px;
+  }
+  
+.example-header-image {
+    background-image: url('https://i.pinimg.com/236x/1d/f3/9a/1df39ad2bc8509ae80a1391d2477f259.jpg');
+    background-size: cover;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+  }
+  
+dd {
+    margin-inline-start: 0;
+}
