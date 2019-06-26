@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Shoe } from '../models/shoes.interface';
+import { NewRelease } from '../models/new-release.interface';
 import * as _ from 'lodash';
 import { Observable } from 'rxjs';
 import { tap, map, share } from 'rxjs/operators';
@@ -13,6 +14,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class ShoeService {
   shoes: Observable<Shoe[]> = null;
+  newRelease: Observable<NewRelease[]> = null;
   _db: AngularFirestore;
   userId: string;
 
@@ -24,6 +26,20 @@ export class ShoeService {
     this.afAuth.authState.subscribe(user => {
       if(user) this.userId = user.uid
     })
+  }
+
+  public getShoesNews(): Observable<any[]> {
+    return this._db.collection('/news').doc('/release').collection('/sneakers')
+                  .snapshotChanges()
+                  .pipe(
+                    map((actions: DocumentChangeAction<NewRelease>[]) => {
+                      return actions.map((a: DocumentChangeAction<NewRelease>) => {
+                        const data: Object = a.payload.doc.data() as NewRelease;
+                        const id = a.payload.doc.id;
+                        return { id, ...data };
+                      });
+                    }),
+                  );
   }
 
   public getShoes(): Observable<any[]> {

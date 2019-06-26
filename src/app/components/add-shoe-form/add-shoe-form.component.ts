@@ -24,10 +24,6 @@ export class AddShoeFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  // submitButtonLabel() {
-  //   return this.isEdit === 'edit' ? 'Edit' : 'Add';
-  // }
-
   onNoClick(): void {
     this.dialogRef.close();
   }

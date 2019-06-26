@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ShoeService } from '../../shoes-service/shoe.service';
+import { NewRelease } from '../../models/new-release.interface';
 
 @Component({
   selector: 'app-news-container',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsContainerComponent implements OnInit {
 
-  constructor() { }
+  newRelease: Observable<any[]>;
+
+  constructor(
+    private shoeService: ShoeService) { }
 
   ngOnInit() {
+      this.newRelease = this.shoeService.getShoesNews();
   }
 
 }

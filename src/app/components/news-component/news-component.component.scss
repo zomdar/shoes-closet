@@ -1,10 +1,24 @@
-.example-card {
-    max-width: 230px;
-  }
+.card-layout {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 280px);
+}
+
+.shoe-card {
+  max-width: 230px;
+}
   
 .example-header-image {
     background-image: url('https://i.pinimg.com/236x/1d/f3/9a/1df39ad2bc8509ae80a1391d2477f259.jpg');
     background-size: cover;
+}
+
+mat-card {
+  width: 240px;
+}
+
+[mat-card-image] {
+  height: 180px;
 }
 
 dl {
