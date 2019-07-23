@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatDialog } from '@angular/material';
 
-import { AddShoeContainerComponent } from '../containers/add-shoe-container/add-shoe-container.component';
+import { AddShoeContainerComponent } from '../add-shoe/containers/add-shoe-container/add-shoe-container.component';
 
 
 @Component({

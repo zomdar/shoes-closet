@@ -20,12 +20,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 
 //containers
-import { AddShoeContainerComponent } from './containers/add-shoe-container/add-shoe-container.component';
+import { AddShoeContainerComponent } from './add-shoe/containers/add-shoe-container/add-shoe-container.component';
 import { ShoesCardsContainerComponent } from './shoes-cards/containers/shoes-cards-container/shoes-cards-container.component';
 import { ShoesCardsComponentComponent } from './shoes-cards/components/shoes-cards-component/shoes-cards-component.component';
 
 //components
-import { AddShoeFormComponent } from './components/add-shoe-form/add-shoe-form.component';
+import { AddShoeFormComponent } from './add-shoe/components/add-shoe-form/add-shoe-form.component';
 import { DeleteShoeModalComponent } from './delete-shoe-modal/delete-shoe-modal.component';
 
 //filter

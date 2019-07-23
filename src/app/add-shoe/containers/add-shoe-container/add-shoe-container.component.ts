@@ -1,9 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { ShoeService } from '../../shoes-service/shoe.service';
+import { ShoeService } from '../../../shoes-service/shoe.service';
 
-import { Shoe } from '../../models/shoes.interface';
+import { Shoe } from '../../../models/shoes.interface';
 
 @Component({
   selector: 'app-add-shoe-container',

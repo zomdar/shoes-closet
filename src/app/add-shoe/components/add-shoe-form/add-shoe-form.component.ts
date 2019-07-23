@@ -3,9 +3,9 @@ import { MatDialogRef } from '@angular/material';
 
 import { AddShoeContainerComponent } from '../../containers/add-shoe-container/add-shoe-container.component';
 
-import { ShoeService } from '../../shoes-service/shoe.service';
+import { ShoeService } from '../../../shoes-service/shoe.service';
 
-import { Shoe } from '../../models/shoes.interface';
+import { Shoe } from '../../../models/shoes.interface';
 
 @Component({
   selector: 'app-add-shoe-form',
