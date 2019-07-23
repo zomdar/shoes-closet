@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { NewRelease } from '../../models/new-release.interface';
+import { NewRelease } from '../../../models/new-release.interface';
 
 @Component({
   selector: 'app-news-component',

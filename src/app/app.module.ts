@@ -21,8 +21,8 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 
 //containers
 import { AddShoeContainerComponent } from './containers/add-shoe-container/add-shoe-container.component';
-import { ShoesCardsContainerComponent } from './containers/shoes-cards-container/shoes-cards-container.component';
-import { ShoesCardsComponentComponent } from './components/shoes-cards-component/shoes-cards-component.component';
+import { ShoesCardsContainerComponent } from './shoes-cards/containers/shoes-cards-container/shoes-cards-container.component';
+import { ShoesCardsComponentComponent } from './shoes-cards/components/shoes-cards-component/shoes-cards-component.component';
 
 //components
 import { AddShoeFormComponent } from './components/add-shoe-form/add-shoe-form.component';
@@ -32,8 +32,8 @@ import { DeleteShoeModalComponent } from './delete-shoe-modal/delete-shoe-modal.
 import { FilterPipe } from './filter.pipe';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoginComponent } from './login/login.component';
-import { NewsContainerComponent } from './containers/news-container/news-container.component';
-import { NewsComponentComponent } from './components/news-component/news-component.component';
+import { NewsContainerComponent } from './news/containers/news-container/news-container.component';
+import { NewsComponentComponent } from './news/components/news-component/news-component.component';
 
 
 @NgModule({

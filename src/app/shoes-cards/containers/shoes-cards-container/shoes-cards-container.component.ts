@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ShoeService } from '../../shoes-service/shoe.service';
+import { ShoeService } from '../../../shoes-service/shoe.service';
 import { Observable } from 'rxjs';
-import { Shoe } from '../../../app/models/shoes.interface';
+import { Shoe } from '../../../models/shoes.interface';
 
 @Component({
   selector: 'app-shoes-cards-container',

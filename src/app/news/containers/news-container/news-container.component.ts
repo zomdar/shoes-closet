@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ShoeService } from '../../shoes-service/shoe.service';
-import { NewRelease } from '../../models/new-release.interface';
+import { ShoeService } from '../../../shoes-service/shoe.service';
+import { NewRelease } from '../../../models/new-release.interface';
 
 @Component({
   selector: 'app-news-container',

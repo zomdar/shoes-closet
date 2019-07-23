@@ -1,11 +1,11 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Shoe } from '../../../app/models/shoes.interface';
+import { Shoe } from '../../../models/shoes.interface';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatDialog } from '@angular/material';
 
-import { DeleteShoeModalComponent } from '../../delete-shoe-modal/delete-shoe-modal.component';
-import { AddShoeContainerComponent } from '../../containers/add-shoe-container/add-shoe-container.component';
+import { DeleteShoeModalComponent } from '../../../delete-shoe-modal/delete-shoe-modal.component';
+import { AddShoeContainerComponent } from '../../../containers/add-shoe-container/add-shoe-container.component';
 
 @Component({
   selector: 'app-shoes-cards-component',
