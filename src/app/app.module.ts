@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AuthGuard } from './auth.guard';
  
@@ -63,6 +64,7 @@ import { NewsComponentComponent } from './news/components/news-component/news-co
     AngularFirestoreModule,
     FormsModule,
     ReactiveFormsModule,
+    FlexLayoutModule
   ],
   entryComponents: [
     AddShoeContainerComponent,
