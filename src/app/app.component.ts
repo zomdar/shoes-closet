@@ -4,8 +4,8 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 
-import { AuthService } from './auth-service/auth-service.service';
-import { LoginComponent } from './login/login.component';
+import { AuthService } from './authentication/auth-service.service';
+import { LoginComponent } from './authentication/login/login.component';
 
 @Component({
   selector: 'app-root',

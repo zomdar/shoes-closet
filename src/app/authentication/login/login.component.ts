@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth-service/auth-service.service';
+import { AuthService } from '../auth-service.service';
 import { AuthProvider } from 'ngx-auth-firebaseui';
 import { MatDialogRef } from '@angular/material/dialog';
 

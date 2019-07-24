@@ -2,23 +2,12 @@
   padding: 16px;
 }
 
-// .card-container {
-//   height: 80%;
-// }
-
-.card-picture {
-  // width: 23%;
+.card-picture {  
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   margin-bottom: 2%;
 }
-
-
-// mat-card {
-//   width: 232px;
-// }
-
-// [mat-card-image] {
-//   height: 195px;
-// }
 
 dl {
   display: grid;

@@ -32,7 +32,7 @@ import { DeleteShoeModalComponent } from './delete-shoe-modal/delete-shoe-modal.
 //filter
 import { FilterPipe } from './filter.pipe';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './authentication/login/login.component';
 import { NewsContainerComponent } from './news/containers/news-container/news-container.component';
 import { NewsComponentComponent } from './news/components/news-component/news-component.component';
 
