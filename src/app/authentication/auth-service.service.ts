@@ -59,4 +59,8 @@ export class AuthService {
 
   }
 
+  public getUserData() {
+    return this.afAuth.auth.currentUser;
+  }
+
 }

@@ -4,25 +4,25 @@
 </h1>
 
 <div class="card-layout">
-  <mat-card (click)="onClickCard()" class="shoe-cards" *ngFor="let shoe of releaseDetail | async">
-    <mat-card-header>
+  <mat-card class="shoe-cards" *ngFor="let shoe of releaseDetail | async">
+    <mat-card-header (click)="onClickCard()">
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{shoe.name}}</mat-card-title>
       <mat-card-subtitle>{{shoe.subName}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="{{shoe.photoLink}}" alt="shoe image">
-    <mat-card-content>
+    <img (click)="onClickCard()" mat-card-image src="{{shoe.photoLink}}" alt="shoe image">
+    <mat-card-content (click)="onClickCard()">
       <dl>
         <dt class="mat-small">Release Date</dt>
-        <dd class="mat-body-2">{{shoe.releaseDate}}</dd>
+        <dd class="mat-body-2">{{shoe.releaseDate.toDate() | date: 'MM/dd/yyyy'}}</dd>
         <dt class="mat-small">Site</dt>
         <dd class="mat-body-2">{{shoe.site}}</dd>
       </dl>
     </mat-card-content>
-    <!-- like icon
     <mat-card-actions>
-      <button mat-mini-fab color="warn"><mat-icon>favorite</mat-icon></button>
-    </mat-card-actions> -->
+      <button class="" (click)="openAddShoeModal(shoe.id, shoe.name, true)" mat-button>Edit</button>
+      <button class="" (click)="deleteShoe(shoe.id, shoe.name)" mat-button>Delete</button>
+    </mat-card-actions>
   </mat-card>
 </div>
 

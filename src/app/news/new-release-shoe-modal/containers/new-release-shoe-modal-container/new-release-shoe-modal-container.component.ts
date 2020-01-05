@@ -36,8 +36,7 @@ export class NewReleaseShoeModalContainerComponent implements OnInit {
     if(this.data.isEdit) {
       this.shoeService.updateShoeNews(event, this.data.id);
     } else {
-      // this.shoeService.createShoesNews(event);
-      console.log(event);
+      this.shoeService.createShoesNews(event);
     }
   }
 
