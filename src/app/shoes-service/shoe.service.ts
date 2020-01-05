@@ -42,6 +42,19 @@ export class ShoeService {
                   );
   }
 
+  public createShoesNews(shoe: NewRelease) {
+    const id = this._db.createId();
+    this._db.collection('/news').doc('/release').collection('/sneakers').doc(id).set(shoe);
+  }
+
+  public updateShoeNews(shoe: NewRelease, shoeId: string){
+    this._db.collection('/news').doc('/release').collection('/sneakers').doc(shoeId).update(shoe);
+  }
+
+  public deleteShoeNews(shoeId: string){
+    this._db.collection('/news').doc('/release').collection('/sneakers').doc(shoeId).delete();
+  }
+
   public getShoes(): Observable<any[]> {
     return this._db.collection('/shoes').doc(`${this.userId}`).collection('/shoesCollection')
                   .snapshotChanges()

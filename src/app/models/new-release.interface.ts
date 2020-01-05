@@ -1,9 +1,9 @@
 export interface NewRelease {
+    brand: string;
     name: string;
     subName: string;
-    releaseDate: string;
-    brand: string;
-    site: string;
     photoLink: string;
+    releaseDate: string;
+    site: string;
 }
   

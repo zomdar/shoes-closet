@@ -1,0 +1,74 @@
+<h1 mat-dialog-title>New Release Info</h1>
+<form #form="ngForm" (ngSubmit)="handleSubmit(form.value, form.valid)" novalidate>
+  <div class="add-shoes-container" mat-dialog-content>
+    <mat-form-field class="brand">
+      <input
+          placeholder="Brand"
+          type="text"
+          name="brand"
+          #brand="ngModel"
+          [ngModel]="detail?.brand"
+          matInput
+          required>
+      <mat-error *ngIf="brand.errors?.required && brand.dirty">You must enter a value</mat-error>
+    </mat-form-field>
+      <mat-form-field class="name">
+        <input
+            placeholder="Shoes Name"
+            type="text"
+            name="name"
+            #name="ngModel"
+            [ngModel]="detail?.name"
+            matInput
+            required>
+        <mat-error *ngIf="name.errors?.required && name.dirty">You must enter a value</mat-error>
+      </mat-form-field>
+      <mat-form-field class="subName">
+        <input
+            placeholder="Shoe Sub Name"
+            type="text"
+            name="subName"
+            #name="ngModel"
+            [ngModel]="detail?.subName"
+            matInput
+            required>
+      </mat-form-field>
+      <mat-form-field class="photoLink">
+          <input
+            placeholder="Photo Link"
+            type="text"
+            name="photoLink"
+            #photo="ngModel"
+            [ngModel]="detail?.photoLink"
+            matInput
+            required>
+      </mat-form-field>
+      <mat-form-field class="releaseDate">
+        <input 
+          matInput 
+          [matDatepicker]="picker" 
+          name="releaseDate"
+          [ngModel]="detail?.releaseDate"
+          placeholder="Choose a relese date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="site">
+        <input
+          placeholder="Site Links"
+          type="text"
+          name="site"
+          #photo="ngModel"
+          [ngModel]="detail?.site"
+          matInput
+          required>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <span class="btn-spacer"></span>
+    <button (click)="onNoClick()" mat-flat-button>Cancel</button>
+    <button color="primary" type="submit" [disabled]="form.invalid" mat-flat-button>
+      Submit
+    </button>
+  </div>
+</form>

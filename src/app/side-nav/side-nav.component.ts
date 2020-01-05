@@ -27,11 +27,6 @@ export class SideNavComponent implements OnInit{
     this.filterState = shoeFilterService.filterState;
     this.filters = shoeFilterService.filters;
   }
-  
-
-  changeFilter(category: string, option: Option) {
-    this.filterState[category] = option;
-  }
 
   updateSearchModel(value) {
     this.searchModel = value;

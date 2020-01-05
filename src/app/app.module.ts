@@ -23,18 +23,22 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 //containers
 import { AddShoeContainerComponent } from './add-shoe/containers/add-shoe-container/add-shoe-container.component';
 import { ShoesCardsContainerComponent } from './shoes-cards/containers/shoes-cards-container/shoes-cards-container.component';
-import { ShoesCardsComponentComponent } from './shoes-cards/components/shoes-cards-component/shoes-cards-component.component';
+import { NewsContainerComponent } from './news/containers/news-container/news-container.component';
+import { NewReleaseShoeModalContainerComponent } from './news/new-release-shoe-modal/containers/new-release-shoe-modal-container/new-release-shoe-modal-container.component';
 
 //components
 import { AddShoeFormComponent } from './add-shoe/components/add-shoe-form/add-shoe-form.component';
 import { DeleteShoeModalComponent } from './delete-shoe-modal/delete-shoe-modal.component';
+import { NewsComponentComponent } from './news/components/news-component/news-component.component';
+import { ShoesCardsComponentComponent } from './shoes-cards/components/shoes-cards-component/shoes-cards-component.component';
+import { NewReleaseShoeModalComponent } from './news/new-release-shoe-modal/components/new-release-shoe-modal-component/new-release-shoe-modal-component.component';
+
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { LoginComponent } from './authentication/login/login.component';
 
 //filter
 import { FilterPipe } from './filter.pipe';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { LoginComponent } from './authentication/login/login.component';
-import { NewsContainerComponent } from './news/containers/news-container/news-container.component';
-import { NewsComponentComponent } from './news/components/news-component/news-component.component';
+
 
 
 @NgModule({
@@ -51,7 +55,9 @@ import { NewsComponentComponent } from './news/components/news-component/news-co
     UserProfileComponent,
     LoginComponent,
     NewsContainerComponent,
-    NewsComponentComponent
+    NewsComponentComponent,
+    NewReleaseShoeModalContainerComponent,
+    NewReleaseShoeModalComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +73,7 @@ import { NewsComponentComponent } from './news/components/news-component/news-co
     FlexLayoutModule
   ],
   entryComponents: [
+    NewReleaseShoeModalContainerComponent,
     AddShoeContainerComponent,
     DeleteShoeModalComponent,
     LoginComponent

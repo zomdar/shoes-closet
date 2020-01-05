@@ -9,34 +9,9 @@
 
 <mat-nav-list>
   <a mat-list-item routerLink="/news" routerLinkActive="active">
-    <button mat-icon-button><mat-icon>new_releases</mat-icon></button>News
+    <button mat-icon-button><mat-icon>new_releases</mat-icon></button>New Releases
   </a>
   <a mat-list-item routerLink="/dashboard" routerLinkActive="active">
     <button mat-icon-button><mat-icon>dashboard</mat-icon></button>Dashboard
   </a>
 </mat-nav-list>
-<!-- <ng-container *ngFor="let filter of filters | async; last as last">
-  <mat-list>
-    <h3 matSubheader>{{ filter.displayName }}</h3>
-
-    <ng-container *ngIf="filterState[filter.category] === ''; else chip">
-      <mat-list-item *ngFor="let val of filter.options">
-        <button mat-button class="list-button" (click)="changeFilter(filter.category, val)">
-          {{ val }}
-        </button>
-      </mat-list-item>
-    </ng-container>
-
-    <ng-template #chip>
-      <mat-chip-list>
-        <ng-container *ngFor="let val of filter.options">
-          <mat-chip *ngIf="filterState[filter.category] === val" (removed)="changeFilter(filter.category, '')">
-            {{val}}
-            <mat-icon matChipRemove>cancel</mat-icon>
-          </mat-chip>
-        </ng-container>
-      </mat-chip-list>
-    </ng-template>
-  </mat-list>
-  <mat-divider *ngIf="!last"></mat-divider>
-</ng-container> -->
