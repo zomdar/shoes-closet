@@ -14,7 +14,6 @@ import { NewRelease } from '../../../models/new-release.interface';
 export class NewsContainerComponent implements OnInit {
 
   newRelease: Observable<any[]>;
-  user;
 
   constructor(
     private shoeService: ShoeService,
@@ -22,9 +21,6 @@ export class NewsContainerComponent implements OnInit {
 
   ngOnInit() {
       this.newRelease = this.shoeService.getShoesNews();
-
-      //todo..user info loads after ngOnInit(bug)
-      this.user = this.authService.getUserData();
   }
 
 }

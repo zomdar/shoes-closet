@@ -5,13 +5,13 @@
 
 <div class="card-layout">
   <mat-card class="shoe-cards" *ngFor="let shoe of releaseDetail | async">
-    <mat-card-header (click)="onClickCard()">
+    <mat-card-header (click)="onClickCard(shoe.id)">
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{shoe.name}}</mat-card-title>
       <mat-card-subtitle>{{shoe.subName}}</mat-card-subtitle>
     </mat-card-header>
-    <img (click)="onClickCard()" mat-card-image src="{{shoe.photoLink}}" alt="shoe image">
-    <mat-card-content (click)="onClickCard()">
+    <img (click)="onClickCard(shoe.id)" mat-card-image src="{{shoe.photoLink}}" alt="shoe image">
+    <mat-card-content (click)="onClickCard(shoe.id)">
       <dl>
         <dt class="mat-small">Release Date</dt>
         <dd class="mat-body-2">{{shoe.releaseDate.toDate() | date: 'MM/dd/yyyy'}}</dd>

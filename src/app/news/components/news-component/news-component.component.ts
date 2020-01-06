@@ -19,9 +19,6 @@ export class NewsComponentComponent implements OnInit {
   @Input()
   releaseDetail: NewRelease;
 
-  @Input()
-  userModel;
-  
   private _mobileQueryListener: () => void;
 
   mobileQuery: MediaQueryList;
@@ -35,22 +32,19 @@ export class NewsComponentComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
   ngOnChanges() {
-    console.log(this.userModel);
   }
-
+  
   openAddShoeModal(id: string, name: string, edit: boolean): void {
     const dialogRef = this.dialog.open(NewReleaseShoeModalContainerComponent, {
       width: '500px',
       data: {id: id, shoeName: name, isEdit: edit}
     });
   }
-
-  onClickCard() {
-    this.user = this.authService.getUserData();
-    console.log(this.user);
-    console.log('modal click');
+  
+  onClickCard(id: string) {
+    console.log(id);
   }
 
   deleteShoe(id: string, name: string) {
