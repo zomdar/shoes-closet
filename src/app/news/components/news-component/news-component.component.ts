@@ -23,12 +23,10 @@ export class NewsComponentComponent implements OnInit {
 
   mobileQuery: MediaQueryList;
   collapsed = true;
-  user;
 
   constructor(media: MediaMatcher, public dialog: MatDialog, public authService: AuthService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
   }
-  
 
   ngOnInit() {
   }

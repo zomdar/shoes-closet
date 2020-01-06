@@ -20,7 +20,7 @@ export class NewReleaseShoeModalContainerComponent implements OnInit {
   ngOnInit() {
     // getting the first shoe in the collection
     if(this.data.isEdit) {
-      this.shoeService.getShoes()
+      this.shoeService.getShoesNews()
                       .subscribe((snapshot) => {
                         snapshot.forEach(doc => {
                           if(doc.id === this.data.id) {

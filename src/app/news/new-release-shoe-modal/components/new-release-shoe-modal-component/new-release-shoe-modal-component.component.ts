@@ -22,17 +22,21 @@ export class NewReleaseShoeModalComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnChanges() {
+    // todo....date not working
+    // this.date = this.detail.releaseDate.toDate();
+    // this.detail.releaseDate = this.date;
+  }
+
   onNoClick(): void {
     this.dialogRef.close();
   }
 
   handleSubmit(shoe: NewRelease, isValid: boolean) {
-
     if(isValid) {
       this.update.emit(shoe);
       this.dialogRef.close();
     }
-    
   }
 
 }

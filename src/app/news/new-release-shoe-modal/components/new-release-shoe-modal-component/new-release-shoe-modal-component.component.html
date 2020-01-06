@@ -3,45 +3,45 @@
   <div class="add-shoes-container" mat-dialog-content>
     <mat-form-field class="brand">
       <input
-          placeholder="Brand"
-          type="text"
-          name="brand"
-          #brand="ngModel"
-          [ngModel]="detail?.brand"
-          matInput
-          required>
+        placeholder="Brand"
+        type="text"
+        name="brand"
+        #brand="ngModel"
+        [ngModel]="detail?.brand"
+        matInput
+        required>
       <mat-error *ngIf="brand.errors?.required && brand.dirty">You must enter a value</mat-error>
     </mat-form-field>
       <mat-form-field class="name">
         <input
-            placeholder="Shoes Name"
-            type="text"
-            name="name"
-            #name="ngModel"
-            [ngModel]="detail?.name"
-            matInput
-            required>
+          placeholder="Shoes Name"
+          type="text"
+          name="name"
+          #name="ngModel"
+          [ngModel]="detail?.name"
+          matInput
+          required>
         <mat-error *ngIf="name.errors?.required && name.dirty">You must enter a value</mat-error>
       </mat-form-field>
       <mat-form-field class="subName">
         <input
-            placeholder="Shoe Sub Name"
-            type="text"
-            name="subName"
-            #name="ngModel"
-            [ngModel]="detail?.subName"
-            matInput
-            required>
+          placeholder="Shoe Sub Name"
+          type="text"
+          name="subName"
+          #name="ngModel"
+          [ngModel]="detail?.subName"
+          matInput
+          required>
       </mat-form-field>
       <mat-form-field class="photoLink">
-          <input
-            placeholder="Photo Link"
-            type="text"
-            name="photoLink"
-            #photo="ngModel"
-            [ngModel]="detail?.photoLink"
-            matInput
-            required>
+        <input
+          placeholder="Photo Link"
+          type="text"
+          name="photoLink"
+          #photo="ngModel"
+          [ngModel]="detail?.photoLink"
+          matInput
+          required>
       </mat-form-field>
       <mat-form-field class="releaseDate">
         <input 

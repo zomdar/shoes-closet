@@ -3,7 +3,7 @@ export interface NewRelease {
     name: string;
     subName: string;
     photoLink: string;
-    releaseDate: string;
+    releaseDate: Date;
     site: string;
 }
   
