@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatDialog } from '@angular/material';
+import { Router } from '@angular/router';
 
 import { NewReleaseShoeModalContainerComponent } from '../../new-release-shoe-modal/containers/new-release-shoe-modal-container/new-release-shoe-modal-container.component';
 import { DeleteShoeModalComponent } from '../../../delete-shoe-modal/delete-shoe-modal.component';
@@ -24,7 +25,7 @@ export class NewsComponentComponent implements OnInit {
   mobileQuery: MediaQueryList;
   collapsed = true;
 
-  constructor(media: MediaMatcher, public dialog: MatDialog, public authService: AuthService) {
+  constructor(media: MediaMatcher, public dialog: MatDialog, public authService: AuthService, public router: Router) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
   }
 
@@ -42,7 +43,7 @@ export class NewsComponentComponent implements OnInit {
   }
   
   onClickCard(id: string) {
-    console.log(id);
+    this.router.navigate(['/shoes'], { queryParams: { shoeId: id } });
   }
 
   deleteShoe(id: string, name: string) {

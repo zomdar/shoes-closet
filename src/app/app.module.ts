@@ -38,7 +38,8 @@ import { LoginComponent } from './authentication/login/login.component';
 
 //filter
 import { FilterPipe } from './filter.pipe';
-
+import { ShoesPageComponent } from './shoes-page/shoes-page-component/shoes-page.component';
+import { ShoesPageContainerComponent } from './shoes-page/shoes-page-container/shoes-page-container.component';
 
 
 @NgModule({
@@ -57,7 +58,9 @@ import { FilterPipe } from './filter.pipe';
     NewsContainerComponent,
     NewsComponentComponent,
     NewReleaseShoeModalContainerComponent,
-    NewReleaseShoeModalComponent
+    NewReleaseShoeModalComponent,
+    ShoesPageComponent,
+    ShoesPageContainerComponent
   ],
   imports: [
     BrowserModule,
