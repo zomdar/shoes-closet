@@ -6,13 +6,16 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./shoes-page.component.scss']
 })
 export class ShoesPageComponent implements OnInit {
-
+  
   @Input()
   shoeInfoModel;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges() {
   }
 
 }
