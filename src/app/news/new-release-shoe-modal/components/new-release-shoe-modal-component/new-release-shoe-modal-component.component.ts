@@ -20,7 +20,7 @@ export class NewReleaseShoeModalComponent implements OnInit {
   update: EventEmitter<NewRelease> = new EventEmitter<NewRelease>();
 
   newReleaseShoeForm = new FormGroup({
-    releaseDate: new FormControl(),
+    releaseDate: new FormControl(''),
     releaseSites: new FormArray([]),
     shoeDetails: new FormGroup({
       brand: new FormControl(''),
