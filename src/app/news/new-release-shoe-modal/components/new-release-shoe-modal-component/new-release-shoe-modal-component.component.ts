@@ -21,7 +21,6 @@ export class NewReleaseShoeModalComponent implements OnInit {
 
   newReleaseShoeForm = new FormGroup({
     releaseDate: new FormControl(''),
-    releaseSites: new FormArray([]),
     shoeDetails: new FormGroup({
       brand: new FormControl(''),
       name: new FormControl(''),
@@ -30,6 +29,21 @@ export class NewReleaseShoeModalComponent implements OnInit {
       photoLink:new FormControl('')
     }),
   })
+  
+  updateFormValues() {
+    if(this.shoesModel) {
+      this.newReleaseShoeForm.setValue({
+        releaseDate: this.shoesModel.releaseDate.toDate(),
+        shoeDetails: {
+          brand: this.shoesModel.shoeDetails.brand,
+          name: this.shoesModel.shoeDetails.name,
+          subName: this.shoesModel.shoeDetails.subName,
+          price: this.shoesModel.shoeDetails.price,
+          photoLink: this.shoesModel.shoeDetails.photoLink
+        }
+      })
+    }
+  }
 
   constructor(public dialogRef: MatDialogRef<NewReleaseShoeModalContainerComponent>) {}
   
@@ -37,9 +51,7 @@ export class NewReleaseShoeModalComponent implements OnInit {
   }
 
   ngOnChanges() {
-    // todo....date not working
-    // this.date = this.shoesModel.releaseDate.toDate();
-    // this.shoesModel.releaseDate = this.date;
+    this.updateFormValues();
   }
 
   onNoClick(): void {

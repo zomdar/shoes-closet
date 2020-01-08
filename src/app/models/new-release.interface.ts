@@ -1,7 +1,7 @@
 export interface NewRelease {
     releaseDate: Date;
     releaseSites: Array<NewReleaseSites>;
-    shoeDetails: Object;
+    shoeDetails: NewReleaseShoeDetail;
 }
 
 export interface NewReleaseSites {
