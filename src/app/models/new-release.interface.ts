@@ -1,6 +1,6 @@
 export interface NewRelease {
     releaseDate: Date;
-    releaseSites: Object;
+    releaseSites: Array<NewReleaseSites>;
     shoeDetails: Object;
 }
 
@@ -15,8 +15,8 @@ export interface NewReleaseShoeDetail {
     brand: string;
     name: string;
     subName: string;
-    realeaseSizes: number;
     price: number;
+    releaseSizes: Object;
     photoLink: string;
 }
   
