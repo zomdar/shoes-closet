@@ -12,7 +12,7 @@ import { NewRelease } from '../../../../models/new-release.interface';
 })
 export class NewReleaseShoeModalComponent implements OnInit {
   @Input()
-  detail: NewRelease;
+  shoesModel: NewRelease;
 
   @Output()
   update: EventEmitter<NewRelease> = new EventEmitter<NewRelease>();
@@ -24,8 +24,8 @@ export class NewReleaseShoeModalComponent implements OnInit {
 
   ngOnChanges() {
     // todo....date not working
-    // this.date = this.detail.releaseDate.toDate();
-    // this.detail.releaseDate = this.date;
+    // this.date = this.shoesModel.releaseDate.toDate();
+    // this.shoesModel.releaseDate = this.date;
   }
 
   onNoClick(): void {

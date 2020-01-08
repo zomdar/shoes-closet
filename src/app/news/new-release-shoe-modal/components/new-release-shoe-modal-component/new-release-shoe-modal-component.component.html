@@ -7,7 +7,7 @@
         type="text"
         name="brand"
         #brand="ngModel"
-        [ngModel]="detail?.brand"
+        [ngModel]="shoesModel?.brand"
         matInput
         required>
       <mat-error *ngIf="brand.errors?.required && brand.dirty">You must enter a value</mat-error>
@@ -18,7 +18,7 @@
           type="text"
           name="name"
           #name="ngModel"
-          [ngModel]="detail?.name"
+          [ngModel]="shoesModel?.name"
           matInput
           required>
         <mat-error *ngIf="name.errors?.required && name.dirty">You must enter a value</mat-error>
@@ -29,7 +29,7 @@
           type="text"
           name="subName"
           #name="ngModel"
-          [ngModel]="detail?.subName"
+          [ngModel]="shoesModel?.subName"
           matInput
           required>
       </mat-form-field>
@@ -39,7 +39,7 @@
           type="text"
           name="photoLink"
           #photo="ngModel"
-          [ngModel]="detail?.photoLink"
+          [ngModel]="shoesModel?.photoLink"
           matInput
           required>
       </mat-form-field>
@@ -48,7 +48,7 @@
           matInput 
           [matDatepicker]="picker" 
           name="releaseDate"
-          [ngModel]="detail?.releaseDate"
+          [ngModel]="shoesModel?.releaseDate"
           placeholder="Choose a relese date">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -59,7 +59,7 @@
           type="text"
           name="site"
           #photo="ngModel"
-          [ngModel]="detail?.site"
+          [ngModel]="shoesModel?.site"
           matInput
           required>
     </mat-form-field>
