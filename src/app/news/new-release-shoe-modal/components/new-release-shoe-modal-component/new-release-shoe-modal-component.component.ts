@@ -33,6 +33,7 @@ export class NewReleaseShoeModalComponent implements OnInit {
   updateFormValues() {
     if(this.shoesModel) {
       this.newReleaseShoeForm.setValue({
+        //todo...fix this part
         releaseDate: this.shoesModel.releaseDate.toDate(),
         shoeDetails: {
           brand: this.shoesModel.shoeDetails.brand,
