@@ -20,8 +20,8 @@
       </dl>
     </mat-card-content>
     <mat-card-actions>
-      <button class="" (click)="openAddShoeModal(shoe.id, shoe.name, true)" mat-button>Edit</button>
-      <button class="" (click)="deleteShoe(shoe.id, shoe.name)" mat-button>Delete</button>
+      <button (click)="openAddShoeModal(shoe.id, shoe.name, true)" color="primary" mat-button>Edit</button>
+      <button (click)="deleteShoe(shoe.id, shoe.name)" color="warn" mat-button>Delete</button>
     </mat-card-actions>
   </mat-card>
 </div>
