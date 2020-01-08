@@ -1,5 +1,5 @@
 export interface NewRelease {
-    releaseDate: Date;
+    releaseDate;
     releaseSites: Array<NewReleaseSites>;
     shoeDetails: NewReleaseShoeDetail;
 }
