@@ -17,6 +17,8 @@ export interface NewReleaseShoeDetail {
     subName: string;
     price: number;
     releaseSizes: Object;
+    color: string;
+    styleCode: string;
     photoLink: string;
 }
   

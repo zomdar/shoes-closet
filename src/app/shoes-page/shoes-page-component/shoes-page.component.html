@@ -1,15 +1,15 @@
 <div *ngIf="shoeInfoModel">
-  <h1 class="center">{{ shoeInfoModel.shoeDetails.name }}</h1>
+  <h1 class="center">{{ shoeInfoModel.shoeDetails.name }} {{ shoeInfoModel.shoeDetails.subName }}</h1>
   <mat-grid-list cols="4" rowHeight="100px">
     <mat-grid-tile colspan="4" rowspan="6">
       <img class="shoe-image" (click)="onClickCard(shoe.id)" mat-card-image src="{{shoeInfoModel.shoeDetails.photoLink}}" alt="shoe image">
     </mat-grid-tile>
     <mat-grid-tile colspan="1" rowspan="3">
       <mat-list>
-        <mat-list-item> {{ shoeInfoModel.shoeDetails.brand }} </mat-list-item>
-        <mat-list-item> {{ shoeInfoModel.shoeDetails.name }} </mat-list-item>
-        <mat-list-item> {{ shoeInfoModel.shoeDetails.subName }} </mat-list-item>
+        <mat-list-item> {{ shoeInfoModel.shoeDetails.name }} {{ shoeInfoModel.shoeDetails.subName }} </mat-list-item>
+        <mat-list-item> {{ shoeInfoModel.shoeDetails.styleCode }} </mat-list-item>
         <mat-list-item> {{ shoeInfoModel.releaseDate.toDate() | date: 'MM/dd/yyyy' }} </mat-list-item>
+        <mat-list-item> {{ shoeInfoModel.shoeDetails.price | currency }} </mat-list-item>
        </mat-list>
     </mat-grid-tile>
     <mat-grid-tile colspan="3" rowspan="3">
