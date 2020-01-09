@@ -32,6 +32,8 @@ import { DeleteShoeModalComponent } from './delete-shoe-modal/delete-shoe-modal.
 import { NewsComponentComponent } from './news/components/news-component/news-component.component';
 import { ShoesCardsComponentComponent } from './shoes-cards/components/shoes-cards-component/shoes-cards-component.component';
 import { NewReleaseShoeModalComponent } from './news/new-release-shoe-modal/components/new-release-shoe-modal-component/new-release-shoe-modal-component.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoginComponent } from './authentication/login/login.component';
@@ -60,7 +62,9 @@ import { ShoesPageContainerComponent } from './shoes-page/shoes-page-container/s
     NewReleaseShoeModalContainerComponent,
     NewReleaseShoeModalComponent,
     ShoesPageComponent,
-    ShoesPageContainerComponent
+    ShoesPageContainerComponent,
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
