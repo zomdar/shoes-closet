@@ -1,11 +1,32 @@
+mat-card {
+  width: 250px;
+}
+
+mat-card:hover {
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+  
+dd {
+    margin-inline-start: 0;
+}
+
 .card-layout {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, 280px);
 }
 
-.shoe-card {
-  max-width: 230px;
+.shoe-cards {
+  // max-width: 230px;
+  :hover {
+    background-color: red($color: #000000);
+  }
 }
   
 .example-header-image {
@@ -13,19 +34,7 @@
     background-size: cover;
 }
 
-mat-card {
-  width: 240px;
-}
 
 [mat-card-image] {
   height: 180px;
-}
-
-dl {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-  }
-  
-dd {
-    margin-inline-start: 0;
 }

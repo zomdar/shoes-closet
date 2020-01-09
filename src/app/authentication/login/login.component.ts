@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   printUser(event) {
     this.dialogRef.close();
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/news']);
   }
 
   printError(event) {

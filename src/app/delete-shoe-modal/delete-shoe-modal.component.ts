@@ -26,7 +26,7 @@ export class DeleteShoeModalComponent implements OnInit {
   }
 
   handleDelete(id: string): void {
-    this.shoeService.deleteShoe(id);
+    this.shoeService.deleteShoeNews(id);
     this.dialogRef.close();
   }
 

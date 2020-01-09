@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+
 import { ShoeService } from '../../../shoes-service/shoe.service';
+import { AuthService } from '../../../authentication/auth-service.service';
+
 import { NewRelease } from '../../../models/new-release.interface';
 
 @Component({
@@ -13,7 +16,8 @@ export class NewsContainerComponent implements OnInit {
   newRelease: Observable<any[]>;
 
   constructor(
-    private shoeService: ShoeService) { }
+    private shoeService: ShoeService,
+    private authService: AuthService) { }
 
   ngOnInit() {
       this.newRelease = this.shoeService.getShoesNews();

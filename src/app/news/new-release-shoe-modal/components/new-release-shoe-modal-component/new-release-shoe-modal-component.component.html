@@ -1,0 +1,65 @@
+<h1 mat-dialog-title>New Release Info</h1>
+<form [formGroup]="newReleaseShoeForm" (ngSubmit)="handleSubmit(newReleaseShoeForm.value, newReleaseShoeForm.valid)" novalidate>
+  <div mat-dialog-content>
+    <mat-form-field class="releaseDate">
+      <input 
+        matInput 
+        [matDatepicker]="picker"
+        formControlName="releaseDate"
+        placeholder="Choose a relese date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <div class="add-shoes-container" formGroupName="shoeDetails">
+      <mat-form-field class="brand">
+        <input
+          placeholder="Brand Name"
+          type="text"
+          formControlName="brand"
+          matInput
+          required>
+      </mat-form-field>
+      <mat-form-field class="name">
+        <input
+          placeholder="Shoes Name"
+          type="text"
+          formControlName="name"
+          matInput
+          required>
+      </mat-form-field>
+      <mat-form-field class="subName">
+        <input
+          placeholder="Sub Name"
+          type="text"
+          formControlName="subName"
+          matInput
+          required>
+      </mat-form-field>
+      <mat-form-field class="price">
+        <input
+          placeholder="Price"
+          type="number"
+          formControlName="price"
+          matInput
+          required>
+          <span matPrefix>$&nbsp;</span>
+          <span matSuffix>.00</span>
+      </mat-form-field>
+      <mat-form-field class="photoLink">
+        <input
+          placeholder="Photo Link"
+          type="text"
+          formControlName="photoLink"
+          matInput
+          required>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <span class="btn-spacer"></span>
+    <button (click)="onNoClick()" mat-flat-button>Cancel</button>
+    <button color="primary" type="submit" [disabled]="newReleaseShoeForm.invalid" mat-flat-button>
+      Submit
+    </button>
+  </div>
+</form>

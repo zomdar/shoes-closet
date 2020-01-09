@@ -1,28 +1,28 @@
+<button class="create-shoe-btn" color="warn" (click)="openAddShoeModal(null, null, false)" mat-raised-button>Add Shoe +</button>
 <h1>
-  June
+  January
 </h1>
 
 <div class="card-layout">
   <mat-card class="shoe-cards" *ngFor="let shoe of releaseDetail | async">
-    <mat-card-header>
+    <mat-card-header (click)="onClickCard(shoe.id)">
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{shoe.name}}</mat-card-title>
-      <mat-card-subtitle>{{shoe.subName}}</mat-card-subtitle>
+      <mat-card-title>{{shoe.shoeDetails.name}}</mat-card-title>
+      <mat-card-subtitle>{{shoe.shoeDetails.subName}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="{{shoe.photoLink}}" alt="shoe image">
-    <mat-card-content >
+    <img (click)="onClickCard(shoe.id)" mat-card-image src="{{shoe.shoeDetails.photoLink}}" alt="shoe image">
+    <mat-card-content (click)="onClickCard(shoe.id)">
       <dl>
         <dt class="mat-small">Release Date</dt>
-        <dd class="mat-body-2">{{shoe.releaseDate}}</dd>
-        <!-- <dt class="mat-small">Time</dt>
-        <dd class="mat-body-2">10:00 AM</dd> -->
-        <dt class="mat-small">Site</dt>
-        <dd class="mat-body-2">{{shoe.site}}</dd>
+        <dd class="mat-body-2">{{shoe.releaseDate.toDate() | date: 'MM/dd/yyyy'}}</dd>
+        <dt class="mat-small">Price</dt>
+        <dd class="mat-body-2">{{shoe.shoeDetails.price | currency}}</dd>
       </dl>
     </mat-card-content>
-    <!-- <mat-card-actions>
-      <button mat-button (click)="collapsed=!collapsed">Show more</button>
-    </mat-card-actions> -->
+    <mat-card-actions>
+      <button (click)="openAddShoeModal(shoe.id, shoe.name, true)" color="primary" mat-button>Edit</button>
+      <button (click)="deleteShoe(shoe.id, shoe.name)" color="warn" mat-button>Delete</button>
+    </mat-card-actions>
   </mat-card>
 </div>
 
