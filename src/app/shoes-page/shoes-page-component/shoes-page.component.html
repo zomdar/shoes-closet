@@ -1,61 +1,122 @@
 <div *ngIf="shoeInfoModel">
-  <mat-grid-list cols="4" rowHeight="100px">
-    <mat-grid-tile colspan="4" rowspan="6">
+  <div fxfill fxLayout="column" fxLayoutAlign="center center">
+    <div fxflex="100">
       <img
         class="shoe-image"
         mat-card-image
         src="{{ shoeInfoModel.shoeDetails.photoLink }}"
         alt="shoe image"
       />
-    </mat-grid-tile>
-    <mat-grid-tile colspan="1" rowspan="3">
-      <mat-list>
-        <mat-list-item>
-          <h3>
+    </div>
+  </div>
+  <div class="containerX">
+    <div
+      fxLayout="row"
+      fxLayout.xs="column"
+      fxLayout.sm="column"
+      fxLayoutGap="10px"
+      class="coloredContainerX box"
+    >
+      <!-- shoe info -->
+      <div fxFlex="20" fxflex.gt-sm="40">
+        <mat-card>
+          <mat-card-title>
             {{ shoeInfoModel.shoeDetails.name }}
             {{ shoeInfoModel.shoeDetails.subName }}
-          </h3>
-        </mat-list-item>
-        <mat-list-item>
-          <p matLine>
-            <span><strong>Style Code:</strong></span>
-            <span>
-              {{ shoeInfoModel.shoeDetails.styleCode }}
-            </span>
-          </p>
-        </mat-list-item>
-        <mat-list-item>
-          <p matLine>
-            <span><strong>Release Date:</strong></span>
-            <span>
-              {{ shoeInfoModel.releaseDate.toDate() | date: "MM/dd/yyyy" }}
-            </span>
-          </p>
-        </mat-list-item>
-        <mat-list-item>
-          <p matLine>
-            <span><strong>Price:</strong></span>
-            <span>
-              {{ shoeInfoModel.shoeDetails.price | currency }}
-            </span>
-          </p>
-        </mat-list-item>
-      </mat-list>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="3" rowspan="3">
-      <span>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam quo
-        minus tempore veritatis quae, amet officiis adipisci, sunt quibusdam
-        error laborum non molestias repellat itaque. Necessitatibus quaerat ea
-        delectus facere.
-      </span>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="4" rowspan="3">
-      <mat-list>
-        <mat-list-item> {{ shoeInfoModel.site }} </mat-list-item>
-        <mat-list-item> {{ shoeInfoModel.site }} </mat-list-item>
-        <mat-list-item> {{ shoeInfoModel.site }} </mat-list-item>
-      </mat-list>
-    </mat-grid-tile>
-  </mat-grid-list>
+          </mat-card-title>
+          <mat-card-content>
+            <mat-list>
+              <mat-list-item>
+                <p matLine>
+                  <span><strong>Style Code:</strong></span>
+                  <span>
+                    {{ shoeInfoModel.shoeDetails.styleCode }}
+                  </span>
+                </p>
+              </mat-list-item>
+              <mat-list-item>
+                <p matLine>
+                  <span><strong>Release Date:</strong></span>
+                  <span>
+                    {{
+                      shoeInfoModel.releaseDate.toDate() | date: "MM/dd/yyyy"
+                    }}
+                  </span>
+                </p>
+              </mat-list-item>
+              <mat-list-item>
+                <p matLine>
+                  <span><strong>Price:</strong></span>
+                  <span>
+                    {{ shoeInfoModel.shoeDetails.price | currency }}
+                  </span>
+                </p>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <!-- links -->
+      <div fxFlex="80" fxflex.gt-sm="60">
+        <mat-card>
+          <mat-card-title>
+            Links
+          </mat-card-title>
+          <mat-card-content>
+            <mat-list>
+              <div class="containerX">
+                <div
+                  fxLayout="row"
+                  fxLayout.xs="column"
+                  fxLayout.sm="column"
+                  class="coloredContainerX box"
+                >
+                  <div fxFlex *ngFor="let shoe of shoes">
+                    <mat-list-item>
+                      <p matLine>
+                        <span><strong>Store:</strong></span>
+                        <span>
+                          {{ shoe.name }}
+                        </span>
+                      </p>
+                    </mat-list-item>
+                    <mat-list-item>
+                      <p matLine>
+                        <span><strong>link:</strong></span>
+                        <button
+                          mat-button
+                          (click)="onClickShoeLink(shoe.link)"
+                          color="primary"
+                        >
+                          {{ shoe.link }}
+                        </button>
+                      </p>
+                    </mat-list-item>
+                    <mat-list-item>
+                      <p matLine>
+                        <button
+                          mat-button
+                          color="warn"
+                        >
+                          delete
+                        </button>
+                        <button
+                          mat-button
+                          color="primary"
+                        >
+                          edit
+                        </button>
+                      </p>
+                    </mat-list-item>
+                  </div>
+                </div>
+              </div>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+        <br>
+        <button mat-flat-button (click)="onClickAddLink()" color="primary">Add Link</button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -85,7 +85,8 @@ import { AddLinksComponent } from './shoes-page/add-links/add-links.component';
     NewReleaseShoeModalContainerComponent,
     AddShoeContainerComponent,
     DeleteShoeModalComponent,
-    LoginComponent
+    LoginComponent,
+    AddLinksComponent
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
