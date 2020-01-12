@@ -1,26 +1,61 @@
 <div *ngIf="shoeInfoModel">
-  <h1 class="center">{{ shoeInfoModel.shoeDetails.name }} {{ shoeInfoModel.shoeDetails.subName }}</h1>
   <mat-grid-list cols="4" rowHeight="100px">
     <mat-grid-tile colspan="4" rowspan="6">
-      <img class="shoe-image" (click)="onClickCard(shoe.id)" mat-card-image src="{{shoeInfoModel.shoeDetails.photoLink}}" alt="shoe image">
+      <img
+        class="shoe-image"
+        mat-card-image
+        src="{{ shoeInfoModel.shoeDetails.photoLink }}"
+        alt="shoe image"
+      />
     </mat-grid-tile>
     <mat-grid-tile colspan="1" rowspan="3">
       <mat-list>
-        <mat-list-item> {{ shoeInfoModel.shoeDetails.name }} {{ shoeInfoModel.shoeDetails.subName }} </mat-list-item>
-        <mat-list-item> {{ shoeInfoModel.shoeDetails.styleCode }} </mat-list-item>
-        <mat-list-item> {{ shoeInfoModel.releaseDate.toDate() | date: 'MM/dd/yyyy' }} </mat-list-item>
-        <mat-list-item> {{ shoeInfoModel.shoeDetails.price | currency }} </mat-list-item>
-       </mat-list>
+        <mat-list-item>
+          <h3>
+            {{ shoeInfoModel.shoeDetails.name }}
+            {{ shoeInfoModel.shoeDetails.subName }}
+          </h3>
+        </mat-list-item>
+        <mat-list-item>
+          <p matLine>
+            <span><strong>Style Code:</strong></span>
+            <span>
+              {{ shoeInfoModel.shoeDetails.styleCode }}
+            </span>
+          </p>
+        </mat-list-item>
+        <mat-list-item>
+          <p matLine>
+            <span><strong>Release Date:</strong></span>
+            <span>
+              {{ shoeInfoModel.releaseDate.toDate() | date: "MM/dd/yyyy" }}
+            </span>
+          </p>
+        </mat-list-item>
+        <mat-list-item>
+          <p matLine>
+            <span><strong>Price:</strong></span>
+            <span>
+              {{ shoeInfoModel.shoeDetails.price | currency }}
+            </span>
+          </p>
+        </mat-list-item>
+      </mat-list>
     </mat-grid-tile>
     <mat-grid-tile colspan="3" rowspan="3">
-      <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam quo minus tempore veritatis quae, amet officiis adipisci, sunt quibusdam error laborum non molestias repellat itaque. Necessitatibus quaerat ea delectus facere.</span>
+      <span>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam quo
+        minus tempore veritatis quae, amet officiis adipisci, sunt quibusdam
+        error laborum non molestias repellat itaque. Necessitatibus quaerat ea
+        delectus facere.
+      </span>
     </mat-grid-tile>
     <mat-grid-tile colspan="4" rowspan="3">
       <mat-list>
         <mat-list-item> {{ shoeInfoModel.site }} </mat-list-item>
         <mat-list-item> {{ shoeInfoModel.site }} </mat-list-item>
         <mat-list-item> {{ shoeInfoModel.site }} </mat-list-item>
-       </mat-list>
+      </mat-list>
     </mat-grid-tile>
   </mat-grid-list>
 </div>

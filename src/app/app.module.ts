@@ -42,6 +42,7 @@ import { LoginComponent } from './authentication/login/login.component';
 import { FilterPipe } from './filter.pipe';
 import { ShoesPageComponent } from './shoes-page/shoes-page-component/shoes-page.component';
 import { ShoesPageContainerComponent } from './shoes-page/shoes-page-container/shoes-page-container.component';
+import { AddLinksComponent } from './shoes-page/add-links/add-links.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { ShoesPageContainerComponent } from './shoes-page/shoes-page-container/s
     ShoesPageComponent,
     ShoesPageContainerComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    AddLinksComponent
   ],
   imports: [
     BrowserModule,
