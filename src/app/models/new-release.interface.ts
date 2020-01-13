@@ -21,4 +21,10 @@ export interface NewReleaseShoeDetail {
     styleCode: string;
     photoLink: string;
 }
+
+export interface NewReleaseSites {
+    name: string;
+    siteLink: string,
+    releaseDate;
+}
   

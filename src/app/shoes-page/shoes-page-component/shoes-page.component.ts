@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
 
-import { AddLinksComponent } from '../add-links/add-links.component';
+import { AddLinksContainerComponent } from '../add-links/add-links-container/add-links-container.component';
 
 @Component({
   selector: 'app-shoes-page',
@@ -25,6 +25,10 @@ export class ShoesPageComponent implements OnInit {
     {
       name: 'link-3',
       link: 'http://www.google.com'
+    },
+    {
+      name: 'link-3',
+      link: 'http://www.google.com'
     }
   ] 
 
@@ -41,7 +45,7 @@ export class ShoesPageComponent implements OnInit {
   }
 
   onClickAddLink() {
-    const dialogRef = this.dialog.open(AddLinksComponent, {
+    const dialogRef = this.dialog.open(AddLinksContainerComponent, {
       width: '380px',
       data: {}
     });

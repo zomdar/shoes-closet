@@ -42,7 +42,8 @@ import { LoginComponent } from './authentication/login/login.component';
 import { FilterPipe } from './filter.pipe';
 import { ShoesPageComponent } from './shoes-page/shoes-page-component/shoes-page.component';
 import { ShoesPageContainerComponent } from './shoes-page/shoes-page-container/shoes-page-container.component';
-import { AddLinksComponent } from './shoes-page/add-links/add-links.component';
+import { AddLinksComponent } from './shoes-page/add-links/add-links-component/add-links.component';
+import { AddLinksContainerComponent } from './shoes-page/add-links/add-links-container/add-links-container.component';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { AddLinksComponent } from './shoes-page/add-links/add-links.component';
     ShoesPageContainerComponent,
     ContactComponent,
     AboutComponent,
-    AddLinksComponent
+    AddLinksComponent,
+    AddLinksContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +88,7 @@ import { AddLinksComponent } from './shoes-page/add-links/add-links.component';
     AddShoeContainerComponent,
     DeleteShoeModalComponent,
     LoginComponent,
-    AddLinksComponent
+    AddLinksContainerComponent
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
