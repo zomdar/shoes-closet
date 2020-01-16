@@ -21,7 +21,6 @@ export class NewReleaseShoeModalComponent implements OnInit {
 
   newReleaseShoeForm = new FormGroup({
     releaseDate: new FormControl(''),
-    releaseSites: new FormArray([]),
     shoeDetails: new FormGroup({
       brand: new FormControl(''),
       name: new FormControl(''),
@@ -37,7 +36,6 @@ export class NewReleaseShoeModalComponent implements OnInit {
     if(this.shoesModel) {
       this.newReleaseShoeForm.setValue({
         releaseDate: this.shoesModel.releaseDate.toDate(),
-        releaseSites: this.shoesModel.releaseSites,
         shoeDetails: {
           brand: this.shoesModel.shoeDetails.brand,
           name: this.shoesModel.shoeDetails.name,
@@ -66,9 +64,8 @@ export class NewReleaseShoeModalComponent implements OnInit {
 
   handleSubmit(shoe: NewRelease, isValid: boolean) {
     if(isValid) {
-      // this.update.emit(shoe);
-      // this.dialogRef.close();
-      console.log(shoe);
+      this.update.emit(shoe);
+      this.dialogRef.close();
     }
   }
 
