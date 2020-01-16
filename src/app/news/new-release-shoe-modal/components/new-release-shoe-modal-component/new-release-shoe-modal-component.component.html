@@ -73,8 +73,8 @@
   </div>
   <div mat-dialog-actions>
     <span class="btn-spacer"></span>
-    <button (click)="onNoClick()" mat-flat-button>Cancel</button>
-    <button color="primary" type="submit" [disabled]="newReleaseShoeForm.invalid" mat-flat-button>
+    <button type="button" (click)="onNoClick()" mat-flat-button>Cancel</button>
+    <button type="submit" color="primary" [disabled]="newReleaseShoeForm.invalid" mat-flat-button>
       Submit
     </button>
   </div>

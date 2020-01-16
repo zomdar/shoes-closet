@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 
 import { ShoeService } from '../../../shoes-service/shoe.service';
 
@@ -12,21 +13,26 @@ import { NewReleaseSites } from "../../../models/new-release.interface";
 })
 export class AddLinksContainerComponent implements OnInit {
   links;
+  shoeId: string;
 
   constructor(
+    private activatedRoute: ActivatedRoute,
     public dialogRef: MatDialogRef<AddLinksContainerComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private shoeService: ShoeService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.shoeId = params['shoeId'];
+    });
+  }
 
   onUpdateLink(event: NewReleaseSites) {
-    console.log(event);
     // if (this.data.isEdit) {
-    //   this.shoeService.updateShoeNews(event, this.data.id);
+    //   this.shoeService.updateShoesNewsLinks(event, this.shoeId);
     // } else {
-    //   this.shoeService.createShoesNews(event);
-    // }
-  }
+      this.shoeService.updateShoesNewsLinks(event,  this.shoeId);
+    }
+  // }
 }

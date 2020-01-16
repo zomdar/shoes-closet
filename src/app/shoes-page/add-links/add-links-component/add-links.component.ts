@@ -27,13 +27,13 @@ export class AddLinksComponent implements OnInit {
   });
 
   updateFormValues() {
-    if(this.linksModel) {
-      this.addLinkform.setValue({
-        // name: this.linksModel.shoeDetails.name,
-        // siteLink: this.linksModel.shoeDetails.siteLink,
-        // releaseDate: this.linksModel.releaseDate.toDate()
-      })
-    }
+    // if(this.linksModel) {
+    //   this.addLinkform.setValue({
+    //     name: this.linksModel.shoeDetails.name,
+    //     siteLink: this.linksModel.shoeDetails.siteLink,
+    //     releaseDate: this.linksModel.releaseDate.toDate()
+    //   })
+    // }
   }
 
   constructor(
@@ -54,7 +54,7 @@ export class AddLinksComponent implements OnInit {
   handleSubmit(links: NewReleaseSites, isValid: boolean) {
     if (isValid) {
       this.update.emit(links);
-      // this.dialogRef.close();
+      this.dialogRef.close();
     }
   }
 }

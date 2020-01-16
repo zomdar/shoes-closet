@@ -71,41 +71,50 @@
                   fxLayout.sm="column"
                   class="coloredContainerX box"
                 >
-                  <div fxFlex *ngFor="let shoe of shoes">
+                  <div fxFlex *ngFor="let shoeLinks of shoeInfoModel.releaseSites">
                     <mat-list-item>
                       <p matLine>
                         <span><strong>Store:</strong></span>
                         <span>
-                          {{ shoe.name }}
+                          {{ shoeLinks.name }}
                         </span>
                       </p>
                     </mat-list-item>
                     <mat-list-item>
                       <p matLine>
-                        <span><strong>link:</strong></span>
+                        <span><strong>Link:</strong></span>
                         <button
                           mat-button
-                          (click)="onClickShoeLink(shoe.link)"
+                          (click)="onClickShoeLink(shoeLinks.link)"
                           color="primary"
                         >
-                          {{ shoe.link }}
+                          {{ shoeLinks.siteLink }}
                         </button>
                       </p>
                     </mat-list-item>
                     <mat-list-item>
                       <p matLine>
+                        <span><strong>Release Date:</strong></span>
+                        <span>
+                          {{ shoeLinks.releaseDate.toDate() | date: 'MM/dd/yyyy' }}
+                        </span>
+                      </p>
+                    </mat-list-item>
+                    <mat-list-item>
+                      <p matLine>
                         <button
+                          (click)="onClickDeleteLink(shoeLinks)"
                           mat-button
                           color="warn"
                         >
                           delete
                         </button>
-                        <button
+                        <!-- <button
                           mat-button
                           color="primary"
                         >
                           edit
-                        </button>
+                        </button> -->
                       </p>
                     </mat-list-item>
                   </div>
