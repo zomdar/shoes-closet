@@ -82,14 +82,8 @@
                     </mat-list-item>
                     <mat-list-item>
                       <p matLine>
-                        <span><strong>Link:</strong></span>
-                        <button
-                          mat-button
-                          (click)="onClickShoeLink(shoeLinks.link)"
-                          color="primary"
-                        >
-                          {{ shoeLinks.siteLink }}
-                        </button>
+                        <span><strong>Link: </strong></span>
+                        <a [href]="shoeLinks.siteLink" target="_blank">Store Link</a>
                       </p>
                     </mat-list-item>
                     <mat-list-item>
