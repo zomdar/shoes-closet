@@ -6,3 +6,84 @@
     width: 100%;
     height: auto;
 }
+
+.shoe-name-details {
+    margin: 25px 0px 0px 35px;
+}
+
+.product-details {
+    margin: 25px 0px 0px 35px;
+}
+
+.links-details {
+    margin: 25px 0px 0px 35px;
+}
+
+.label-color {
+    color: #BFAC94;
+}
+
+.details-spacer-color {
+    padding: 46px;
+}
+
+.details-spacer-price {
+    padding: 40px;
+}
+
+.details-spacer-release {
+    padding: 50px;
+}
+
+.shoe-image-container {
+    border: 1px solid #2E2926;
+}
+
+.shoe-details-container {
+    border: 1px solid #2E2926;
+}
+
+.shoe-image-container {
+    background-color: white;
+}
+.shoe-details-container {
+    background-color: white;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .links-details {
+        margin: 25px 0px 30px 35px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .links-details {
+        margin: 25px 0px 30px 35px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .main-container {
+        padding: 120px 150px 0px 150px;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .main-container {
+        padding: 120px 150px 0px 150px;
+    }
+    .shoe-image-container {
+        height: 530px;
+    }
+    .shoe-details-container {
+        height: 528px;
+    }
+}
