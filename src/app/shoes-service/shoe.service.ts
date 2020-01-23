@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Shoe } from '../models/shoes.interface';
-import { NewRelease } from '../models/new-release.interface';
+import { NewRelease, NewReleaseSites } from '../models/new-release.interface';
+import { firebase } from '@firebase/app';
+import '@firebase/firestore';
 import * as _ from 'lodash';
 import { Observable } from 'rxjs';
 import { tap, map, share } from 'rxjs/operators';
@@ -53,6 +55,18 @@ export class ShoeService {
 
   public deleteShoeNews(shoeId: string){
     this._db.collection('/news').doc('/release').collection('/sneakers').doc(shoeId).delete();
+  }
+
+  public updateShoesNewsLinks(shoeLinks: NewReleaseSites, shoeId: string) {
+    this._db.collection('/news').doc('/release').collection('/sneakers').doc(shoeId).update({
+      releaseSites: firebase.firestore.FieldValue.arrayUnion(shoeLinks)
+    })
+  }
+
+  public deleteShoesNewsLinks(shoeLinks: NewReleaseSites, shoeId: string) {
+    this._db.collection('/news').doc('/release').collection('/sneakers').doc(shoeId).update({
+      releaseSites: firebase.firestore.FieldValue.arrayRemove(shoeLinks)
+    })
   }
 
   public getShoes(): Observable<any[]> {

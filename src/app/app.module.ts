@@ -32,6 +32,8 @@ import { DeleteShoeModalComponent } from './delete-shoe-modal/delete-shoe-modal.
 import { NewsComponentComponent } from './news/components/news-component/news-component.component';
 import { ShoesCardsComponentComponent } from './shoes-cards/components/shoes-cards-component/shoes-cards-component.component';
 import { NewReleaseShoeModalComponent } from './news/new-release-shoe-modal/components/new-release-shoe-modal-component/new-release-shoe-modal-component.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoginComponent } from './authentication/login/login.component';
@@ -40,6 +42,8 @@ import { LoginComponent } from './authentication/login/login.component';
 import { FilterPipe } from './filter.pipe';
 import { ShoesPageComponent } from './shoes-page/shoes-page-component/shoes-page.component';
 import { ShoesPageContainerComponent } from './shoes-page/shoes-page-container/shoes-page-container.component';
+import { AddLinksComponent } from './shoes-page/add-links/add-links-component/add-links.component';
+import { AddLinksContainerComponent } from './shoes-page/add-links/add-links-container/add-links-container.component';
 
 
 @NgModule({
@@ -60,7 +64,11 @@ import { ShoesPageContainerComponent } from './shoes-page/shoes-page-container/s
     NewReleaseShoeModalContainerComponent,
     NewReleaseShoeModalComponent,
     ShoesPageComponent,
-    ShoesPageContainerComponent
+    ShoesPageContainerComponent,
+    ContactComponent,
+    AboutComponent,
+    AddLinksComponent,
+    AddLinksContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +87,8 @@ import { ShoesPageContainerComponent } from './shoes-page/shoes-page-container/s
     NewReleaseShoeModalContainerComponent,
     AddShoeContainerComponent,
     DeleteShoeModalComponent,
-    LoginComponent
+    LoginComponent,
+    AddLinksContainerComponent
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

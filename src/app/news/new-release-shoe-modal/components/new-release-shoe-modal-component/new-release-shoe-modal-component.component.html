@@ -45,6 +45,22 @@
           <span matPrefix>$&nbsp;</span>
           <span matSuffix>.00</span>
       </mat-form-field>
+      <mat-form-field class="color">
+        <input
+          placeholder="Color"
+          type="text"
+          formControlName="color"
+          matInput
+          required>
+      </mat-form-field>
+      <mat-form-field class="styleCode">
+        <input
+          placeholder="Style Code"
+          type="text"
+          formControlName="styleCode"
+          matInput
+          required>
+      </mat-form-field>
       <mat-form-field class="photoLink">
         <input
           placeholder="Photo Link"
@@ -57,8 +73,8 @@
   </div>
   <div mat-dialog-actions>
     <span class="btn-spacer"></span>
-    <button (click)="onNoClick()" mat-flat-button>Cancel</button>
-    <button color="primary" type="submit" [disabled]="newReleaseShoeForm.invalid" mat-flat-button>
+    <button type="button" (click)="onNoClick()" mat-flat-button>Cancel</button>
+    <button type="submit" color="primary" [disabled]="newReleaseShoeForm.invalid" mat-flat-button>
       Submit
     </button>
   </div>

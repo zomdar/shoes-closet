@@ -1,26 +1,63 @@
 <div *ngIf="shoeInfoModel">
-  <h1 class="center">{{ shoeInfoModel.shoeDetails.name }}</h1>
-  <mat-grid-list cols="4" rowHeight="100px">
-    <mat-grid-tile colspan="4" rowspan="6">
-      <img class="shoe-image" (click)="onClickCard(shoe.id)" mat-card-image src="{{shoeInfoModel.shoeDetails.photoLink}}" alt="shoe image">
-    </mat-grid-tile>
-    <mat-grid-tile colspan="1" rowspan="3">
-      <mat-list>
-        <mat-list-item> {{ shoeInfoModel.shoeDetails.brand }} </mat-list-item>
-        <mat-list-item> {{ shoeInfoModel.shoeDetails.name }} </mat-list-item>
-        <mat-list-item> {{ shoeInfoModel.shoeDetails.subName }} </mat-list-item>
-        <mat-list-item> {{ shoeInfoModel.releaseDate.toDate() | date: 'MM/dd/yyyy' }} </mat-list-item>
-       </mat-list>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="3" rowspan="3">
-      <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam quo minus tempore veritatis quae, amet officiis adipisci, sunt quibusdam error laborum non molestias repellat itaque. Necessitatibus quaerat ea delectus facere.</span>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="4" rowspan="3">
-      <mat-list>
-        <mat-list-item> {{ shoeInfoModel.site }} </mat-list-item>
-        <mat-list-item> {{ shoeInfoModel.site }} </mat-list-item>
-        <mat-list-item> {{ shoeInfoModel.site }} </mat-list-item>
-       </mat-list>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <!-- <div fxfill fxLayout="column" fxLayoutAlign="center center">
+    <div fxflex="100">
+      <img
+        class="shoe-image"
+        mat-card-image
+        src="{{ shoeInfoModel.shoeDetails.photoLink }}"
+        alt="shoe image"
+      />
+    </div>
+  </div> -->
+  <div class="containerX main-container">
+    <div
+      fxLayout="row"
+      fxLayout.xs="column"
+      fxLayout.sm="column"
+      class="coloredContainerX box"
+    >
+      <!-- shoe info -->
+      <div class="shoe-image-container" fxFlex="50" fxflex.gt-sm="40">
+          <img
+            class="shoe-image"
+            src="{{ shoeInfoModel.shoeDetails.photoLink }}"
+            alt="shoe image"
+            layout-fill/>
+      </div>
+      <!-- links -->
+      <div fxFlex="50" fxflex.gt-sm="60">
+        <div class="shoe-details-container">
+          <div class="shoe-name-details">
+            <h2>{{ shoeInfoModel.shoeDetails.name }} {{ shoeInfoModel.shoeDetails.subName }}</h2>
+            <p><span class="label-color">SKU:</span> <span class="details-spacer-sku"></span>{{ shoeInfoModel.shoeDetails.styleCode }}</p>
+          </div>
+          <br>
+          <hr>
+          <div class="product-details">
+            <h4>PRODUCT DETAILS</h4>
+            <p><span class="label-color">COLORWAY</span>  <span class="details-spacer-color"></span>{{ shoeInfoModel.shoeDetails.color }}</p>
+            <p><span class="label-color">RELEASED</span> <span class="details-spacer-release"></span>{{ shoeInfoModel.releaseDate.toDate() | date: "MM/dd/yyyy" }}</p>
+            <p><span class="label-color">RETAIL PRICE</span>  <span class="details-spacer-price"></span>{{ shoeInfoModel.shoeDetails.price | currency }}</p>
+          </div>
+          <br>
+          <hr>
+          <div class="links-details">
+            <!-- <h4>WHERE TO GET IT<button mat-button (click)="onClickAddLink()" color="primary">add</button></h4> -->
+            <h4>WHERE TO GET IT</h4>
+            <div *ngFor="let shoeLinks of shoeInfoModel.releaseSites">
+              <a [href]="shoeLinks.siteLink" target="_blank">{{ shoeLinks.name }}</a>
+              <!-- <p>
+                <button
+                  (click)="onClickDeleteLink(shoeLinks)"
+                  mat-button
+                  color="warn">
+                  delete
+                </button>
+              </p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

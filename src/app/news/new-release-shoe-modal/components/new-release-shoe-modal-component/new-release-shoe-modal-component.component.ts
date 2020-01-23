@@ -26,6 +26,8 @@ export class NewReleaseShoeModalComponent implements OnInit {
       name: new FormControl(''),
       subName: new FormControl(''),
       price: new FormControl(''),
+      color: new FormControl(''),
+      styleCode: new FormControl(''),
       photoLink:new FormControl('')
     }),
   })
@@ -39,6 +41,8 @@ export class NewReleaseShoeModalComponent implements OnInit {
           name: this.shoesModel.shoeDetails.name,
           subName: this.shoesModel.shoeDetails.subName,
           price: this.shoesModel.shoeDetails.price,
+          color: this.shoesModel.shoeDetails.color,
+          styleCode: this.shoesModel.shoeDetails.styleCode,
           photoLink: this.shoesModel.shoeDetails.photoLink
         }
       })
