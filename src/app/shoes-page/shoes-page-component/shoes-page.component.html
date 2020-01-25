@@ -28,24 +28,25 @@
       <div fxFlex="50" fxflex.gt-sm="60">
         <div class="shoe-details-container">
           <div class="shoe-name-details">
-            <h2>{{ shoeInfoModel.shoeDetails.name }} {{ shoeInfoModel.shoeDetails.subName }}</h2>
-            <p><span class="label-color">SKU:</span> <span class="details-spacer-sku"></span>{{ shoeInfoModel.shoeDetails.styleCode }}</p>
+            <h1 class="mat-h1">{{ shoeInfoModel.shoeDetails.name }} {{ shoeInfoModel.shoeDetails.subName }}</h1>
           </div>
-          <br>
           <hr>
           <div class="product-details">
-            <h4>PRODUCT DETAILS</h4>
-            <p><span class="label-color">COLORWAY</span>  <span class="details-spacer-color"></span>{{ shoeInfoModel.shoeDetails.color }}</p>
-            <p><span class="label-color">RELEASED</span> <span class="details-spacer-release"></span>{{ shoeInfoModel.releaseDate.toDate() | date: "MM/dd/yyyy" }}</p>
-            <p><span class="label-color">RETAIL PRICE</span>  <span class="details-spacer-price"></span>{{ shoeInfoModel.shoeDetails.price | currency }}</p>
+            <h3 class="mat-h3">PRODUCT DETAILS</h3>
+            <p class="mat-body"><span class="label-color">SKU</span> <span class="details-spacer-sku"></span>{{ shoeInfoModel.shoeDetails.styleCode }}</p>
+            <p class="mat-body"><span class="label-color">COLORWAY</span>  <span class="details-spacer-color"></span>{{ shoeInfoModel.shoeDetails.color }}</p>
+            <p class="mat-body"><span class="label-color">RELEASED</span> <span class="details-spacer-release"></span>{{ shoeInfoModel.releaseDate.toDate() | date: "MM/dd/yyyy" }}</p>
+            <p class="mat-body"><span class="label-color">RETAIL PRICE</span>  <span class="details-spacer-price"></span>{{ shoeInfoModel.shoeDetails.price | currency }}</p>
           </div>
           <br>
           <hr>
           <div class="links-details">
-            <!-- <h4>WHERE TO GET IT<button mat-button (click)="onClickAddLink()" color="primary">add</button></h4> -->
-            <h4>WHERE TO GET IT</h4>
+            <!-- <h3>WHERE TO GET IT<button mat-button (click)="onClickAddLink()" color="primary">add</button></h3> -->
+            <h3 class="mat-h3">WHERE TO GET IT</h3>
             <div *ngFor="let shoeLinks of shoeInfoModel.releaseSites">
-              <a [href]="shoeLinks.siteLink" target="_blank">{{ shoeLinks.name }}</a>
+              <div class="site-links">
+                <a class="mat-body" [href]="shoeLinks.siteLink" target="_blank">{{ shoeLinks.name }}</a>
+              </div>
               <!-- <p>
                 <button
                   (click)="onClickDeleteLink(shoeLinks)"
