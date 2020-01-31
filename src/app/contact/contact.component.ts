@@ -19,8 +19,10 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleSubmit(formValue) {
-    console.log(formValue);
+  handleSubmit(formValue, isFormValid) {
+    if(isFormValid) {
+      console.log(formValue);
+    }
   }
 
 }
