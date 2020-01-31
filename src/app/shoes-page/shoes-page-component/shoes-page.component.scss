@@ -2,6 +2,10 @@
     text-align: center;
 }
 
+.links-columns {
+    columns: 3;
+}
+
 .shoe-image {
     width: 100%;
     height: auto;
@@ -53,10 +57,6 @@
 
 .shoe-details-container {
     background-color: white;
-}
-
-.site-links {
-    padding-bottom: 10px;
 }
 
 a:visited {

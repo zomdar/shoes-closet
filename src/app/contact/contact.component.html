@@ -1,3 +1,38 @@
 <div class="contact">
   <h1>Contact Us</h1>
+
+  <form [formGroup]="contactForm" (ngSubmit)="handleSubmit(contactForm.value, contactForm.valid)" novalidate>
+    <div class="contact-container">
+      <mat-form-field class="name">
+        <input
+          placeholder="Name"
+          type="text"
+          formControlName="name"
+          matInput
+          required>
+      </mat-form-field>
+      <mat-form-field class="email">
+        <input
+          placeholder="Email"
+          type="text"
+          formControlName="email"
+          matInput
+          required>
+      </mat-form-field>
+      <mat-form-field class="comment">
+        <textarea
+          rows="5"
+          placeholder="Comment"
+          type="text"
+          formControlName="comment"
+          matInput
+          required></textarea>
+      </mat-form-field>
+    </div>
+      <span class="btn-spacer"></span>
+      <button type="submit" color="primary" [disabled]="contactForm.invalid" mat-flat-button>
+        Submit
+      </button>
+  </form>
+
 </div>

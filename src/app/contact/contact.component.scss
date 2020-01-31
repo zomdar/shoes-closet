@@ -1,3 +1,19 @@
 .contact {
     margin: 16px;
 }
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.name {
+    width: 65%;
+}
+
+.email {
+    width: 65%;
+}

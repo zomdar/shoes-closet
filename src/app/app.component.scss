@@ -25,6 +25,12 @@ mat-toolbar {
   padding: 0 14px;
 }
 
+.search {
+  padding-top: 10px;
+  font-size: 15px!important;
+  width: 150px;
+}
+
 mat-sidenav-container {
   grid-area: page-container
 }

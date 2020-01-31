@@ -43,18 +43,18 @@
           <div class="links-details">
             <!-- <h3>WHERE TO GET IT<button mat-button (click)="onClickAddLink()" color="primary">add</button></h3> -->
             <h3 class="mat-h3">WHERE TO GET IT</h3>
-            <div *ngFor="let shoeLinks of shoeInfoModel.releaseSites">
-              <div class="site-links">
+            <div class="links-columns">
+              <div class="" *ngFor="let shoeLinks of shoeInfoModel.releaseSites">
                 <a class="mat-body" [href]="shoeLinks.siteLink" target="_blank">{{ shoeLinks.name }}</a>
-              </div>
-              <!-- <p>
-                <button
+                <!-- <button
                   (click)="onClickDeleteLink(shoeLinks)"
                   mat-button
                   color="warn">
                   delete
-                </button>
-              </p> -->
+                </button> -->
+                <br>
+                <br>
+              </div>
             </div>
           </div>
         </div>
