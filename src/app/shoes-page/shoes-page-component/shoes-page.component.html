@@ -31,27 +31,72 @@
             <h1 class="mat-h1">{{ shoeInfoModel.shoeDetails.name }} {{ shoeInfoModel.shoeDetails.subName }}</h1>
           </div>
           <hr>
+
           <div class="product-details">
             <h3 class="mat-h3">PRODUCT DETAILS</h3>
-            <p class="mat-body"><span class="label-color">SKU</span> <span class="details-spacer-sku"></span>{{ shoeInfoModel.shoeDetails.styleCode }}</p>
-            <p class="mat-body"><span class="label-color">COLORWAY</span>  <span class="details-spacer-color"></span>{{ shoeInfoModel.shoeDetails.color }}</p>
-            <p class="mat-body"><span class="label-color">RELEASED</span> <span class="details-spacer-release"></span>{{ shoeInfoModel.releaseDate.toDate() | date: "MM/dd/yyyy" }}</p>
-            <p class="mat-body"><span class="label-color">RETAIL PRICE</span>  <span class="details-spacer-price"></span>{{ shoeInfoModel.shoeDetails.price | currency }}</p>
+            <div class='row'>
+              <div class='column'>
+                <div class='product-label-column'>
+                  <p class="label-color">SKU</p> 
+                </div>
+              </div>
+              <div class='column'>
+                <div class='product-details-column'>
+                  <p>{{ shoeInfoModel.shoeDetails.styleCode }}</p>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='column'>
+                <div class='product-label-column'>
+                  <p class="label-color">COLORWAY</p> 
+                </div>
+              </div>
+              <div class='column'>
+                <div class='product-details-column'>
+                  <p>{{ shoeInfoModel.shoeDetails.color }}</p>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='column'>
+                <div class='product-label-column'>
+                  <p class="label-color">RELEASED</p>
+                </div>
+              </div>
+              <div class='column'>
+                <div class='product-details-column'>
+                  <p>{{ shoeInfoModel.releaseDate.toDate() | date: "MM/dd/yyyy" }}</p>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='column'>
+                <div class='product-label-column'>
+                  <p class="label-color">RETAIL PRICE</p> 
+                </div>
+              </div>
+              <div class='column'>
+                <div class='product-details-column'>
+                  <p>{{ shoeInfoModel.shoeDetails.price | currency }}</p>
+                </div>
+              </div>
+            </div>
           </div>
           <br>
           <hr>
           <div class="links-details">
-            <!-- <h3>WHERE TO GET IT<button mat-button (click)="onClickAddLink()" color="primary">add</button></h3> -->
-            <h3 class="mat-h3">WHERE TO GET IT</h3>
+            <h3>WHERE TO GET IT<button mat-button (click)="onClickAddLink()" color="primary">add</button></h3>
+            <!-- <h3 class="mat-h3">WHERE TO GET IT</h3> -->
             <div class="links-columns">
               <div class="" *ngFor="let shoeLinks of shoeInfoModel.releaseSites">
                 <a class="mat-body" [href]="shoeLinks.siteLink" target="_blank">{{ shoeLinks.name }}</a>
-                <!-- <button
+                <button
                   (click)="onClickDeleteLink(shoeLinks)"
                   mat-button
                   color="warn">
                   delete
-                </button> -->
+                </button>
                 <br>
                 <br>
               </div>

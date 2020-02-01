@@ -2,6 +2,20 @@
     text-align: center;
 }
 
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+  
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
 .links-columns {
     columns: 3;
 }
@@ -12,35 +26,19 @@
 }
 
 .shoe-name-details {
-    margin: 18px 0px 0px 35px;
+    margin: 18px 18px 0px 35px;
 }
 
 .product-details {
-    margin: 25px 0px 0px 35px;
+    margin: 25px 25px 0px 35px;
 }
 
 .links-details {
-    margin: 25px 0px 0px 35px;
+    margin: 25px 25px 0px 35px;
 }
 
 .label-color {
     color: #BFAC94;
-}
-
-.details-spacer-color {
-    padding: 50px;
-}
-
-.details-spacer-price {
-    padding: 40px;
-}
-
-.details-spacer-release {
-    padding: 53px;
-}
-
-.details-spacer-sku {
-    padding: 77px;
 }
 
 .shoe-image-container {
