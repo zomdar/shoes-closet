@@ -1,30 +1,32 @@
-<!-- <button class="create-shoe-btn" (click)="openAddShoeModal(null, null, false)" mat-raised-button>Add Shoe +</button> -->
-<h1>
-  February
-</h1>
-
-<div class="card-layout">
-  <div *ngFor="let shoe of releaseDetail | async">
-    <mat-card class="shoe-cards">
-      <mat-card-header (click)="onClickCard(shoe.id)">
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{shoe.shoeDetails.name}}</mat-card-title>
-        <mat-card-subtitle>{{shoe.shoeDetails.subName}}</mat-card-subtitle>
-      </mat-card-header>
-      <img (click)="onClickCard(shoe.id)" mat-card-image src="{{shoe.shoeDetails.photoLink}}" alt="shoe image">
-      <mat-card-content (click)="onClickCard(shoe.id)">
-        <dl>
-          <dt class="mat-small">Release Date</dt>
-          <dd class="mat-body-2">{{shoe.releaseDate.toDate() | date: 'MM/dd/yyyy'}}</dd>
-          <dt class="mat-small">Price</dt>
-          <dd class="mat-body-2">{{shoe.shoeDetails.price | currency}}</dd>
-        </dl>
-      </mat-card-content>
-      <!-- <mat-card-actions>
-        <button (click)="openAddShoeModal(shoe.id, shoe.name, true)" color="primary" mat-button>Edit</button>
-        <button (click)="deleteShoe(shoe.id, shoe.name)" color="warn" mat-button>Delete</button>
-      </mat-card-actions> -->
-    </mat-card>
+<div class="news-container">
+  <h1>
+    February
+  </h1>
+  <!-- <button class="create-shoe-btn" (click)="openAddShoeModal(null, null, false)" mat-raised-button>Add Shoe +</button> -->
+  
+  <div class="card-layout">
+    <div *ngFor="let shoe of releaseDetail | async">
+      <mat-card class="shoe-cards">
+        <mat-card-header (click)="onClickCard(shoe.id)">
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{shoe.shoeDetails.name}}</mat-card-title>
+          <mat-card-subtitle>{{shoe.shoeDetails.subName}}</mat-card-subtitle>
+        </mat-card-header>
+        <img (click)="onClickCard(shoe.id)" mat-card-image src="{{shoe.shoeDetails.photoLink}}" alt="shoe image">
+        <mat-card-content (click)="onClickCard(shoe.id)">
+          <dl>
+            <dt class="mat-small">Release Date</dt>
+            <dd class="mat-body-2">{{shoe.releaseDate.toDate() | date: 'MM/dd/yyyy'}}</dd>
+            <dt class="mat-small">Price</dt>
+            <dd class="mat-body-2">{{shoe.shoeDetails.price | currency}}</dd>
+          </dl>
+        </mat-card-content>
+        <!-- <mat-card-actions>
+          <button (click)="openAddShoeModal(shoe.id, shoe.name, true)" color="primary" mat-button>Edit</button>
+          <button (click)="deleteShoe(shoe.id, shoe.name)" color="warn" mat-button>Delete</button>
+        </mat-card-actions> -->
+      </mat-card>
+    </div>
   </div>
 </div>
 
