@@ -91,12 +91,12 @@
             <div class="links-columns">
               <div class="" *ngFor="let shoeLinks of shoeInfoModel.releaseSites">
                 <a class="mat-body" [href]="shoeLinks.siteLink" target="_blank">{{ shoeLinks.name }}</a>
-                <button
+                <!-- <button
                   (click)="onClickDeleteLink(shoeLinks)"
                   mat-button
                   color="warn">
                   delete
-                </button>
+                </button> -->
                 <br>
                 <br>
               </div>
