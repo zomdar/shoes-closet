@@ -16,7 +16,7 @@ dd {
     margin-inline-start: 0;
 }
 
-h1 {
+.header {
   margin-left: 2rem;
 }
 
@@ -24,7 +24,7 @@ h1 {
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat(auto-fill, 280px);
-  margin-left: 2rem;
+  justify-content: center;
 }
 
 .news-container {
@@ -55,14 +55,15 @@ h1 {
 
 /* Mobile Landscape Screen Sizes */
 @media only screen and (min-width: 480px)  {
-
+  .header {
+    margin-left: 3rem;
+  }
 }
 /* Desktop screen Sizes */
 @media only screen and (min-width: 768px) {
-  h1 {
-    margin-left: 0;
+  .header {
+    margin-left: 2rem;
   }
-  
   .card-layout {
     display: grid;
     grid-gap: 2rem;
