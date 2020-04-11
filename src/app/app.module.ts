@@ -44,6 +44,7 @@ import { ShoesPageComponent } from './shoes-page/shoes-page-component/shoes-page
 import { ShoesPageContainerComponent } from './shoes-page/shoes-page-container/shoes-page-container.component';
 import { AddLinksComponent } from './shoes-page/add-links/add-links-component/add-links.component';
 import { AddLinksContainerComponent } from './shoes-page/add-links/add-links-container/add-links-container.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { AddLinksContainerComponent } from './shoes-page/add-links/add-links-con
     ContactComponent,
     AboutComponent,
     AddLinksComponent,
-    AddLinksContainerComponent
+    AddLinksContainerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

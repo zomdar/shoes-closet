@@ -11,24 +11,6 @@ h1 {
 
 mat-toolbar {
   z-index: 2;
-  // grid-area: toolbar;
-  // display: grid;
-  // grid-template:  "title menu" auto
-  // / 1fr 50px;
-}
-
-.toolbar-spacer {
-  flex: 1 1 auto;
-}
-
-.account-icon {
-  padding: 0 14px;
-}
-
-.search {
-  padding-top: 10px;
-  font-size: 15px!important;
-  width: 150px;
 }
 
 mat-sidenav-container {
@@ -39,16 +21,30 @@ mat-sidenav {
   width: 310px;
 }
 
-.menu-button {
-  grid-area: menu;
-}
-
 mat-menu {
   display: none
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.account-icon {
+  padding: 0 14px;
 }
 
 .toolbar-color {
   color: #2E2926;
   background-color: white;
   border-bottom: 1px solid #2E2926;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.row {
+  flex: 1;
 }

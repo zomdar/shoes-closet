@@ -86,20 +86,20 @@
           <br>
           <hr>
           <div class="links-details">
+            <div class="row">
+              <h3 class="mat-h3">WHERE TO GET IT</h3>
+            </div>
             <!-- <h3>WHERE TO GET IT<button mat-button (click)="onClickAddLink()" color="primary">add</button></h3> -->
-            <h3 class="mat-h3">WHERE TO GET IT</h3>
-            <div class="links-columns">
-              <div class="" *ngFor="let shoeLinks of shoeInfoModel.releaseSites">
-                <a class="mat-body" [href]="shoeLinks.siteLink" target="_blank">{{ shoeLinks.name }}</a>
+            <div class="row">
+              <!-- <div class="" > -->
+                <a *ngFor="let shoeLinks of shoeInfoModel.releaseSites" class="mat-body column-sm" [href]="shoeLinks.siteLink" target="_blank">{{ shoeLinks.name }}</a>
                 <!-- <button
                   (click)="onClickDeleteLink(shoeLinks)"
                   mat-button
                   color="warn">
                   delete
                 </button> -->
-                <br>
-                <br>
-              </div>
+              <!-- </div> -->
             </div>
           </div>
         </div>

@@ -1,14 +1,15 @@
 <div class="news-container">
   <h1>
-    February
+    April
   </h1>
+
   <!-- <button class="create-shoe-btn" (click)="openAddShoeModal(null, null, false)" mat-raised-button>Add Shoe +</button> -->
   
   <div class="card-layout">
     <div *ngFor="let shoe of releaseDetail | async">
       <mat-card class="shoe-cards">
         <mat-card-header (click)="onClickCard(shoe.id)">
-          <div mat-card-avatar class="example-header-image"></div>
+          <div mat-card-avatar class="shoe-header-image"></div>
           <mat-card-title>{{shoe.shoeDetails.name}}</mat-card-title>
           <mat-card-subtitle>{{shoe.shoeDetails.subName}}</mat-card-subtitle>
         </mat-card-header>

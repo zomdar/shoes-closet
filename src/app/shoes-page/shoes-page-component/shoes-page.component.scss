@@ -4,20 +4,20 @@
 
 .row {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     width: 100%;
 }
   
 .column {
-    display: flex;
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
 }
 
-.links-columns {
-    columns: 3;
+.column-sm {
+    flex: 0 0 22%;
+    margin: 0 4%;
+    margin-bottom: 1rem;
 }
 
 .shoe-image {
@@ -34,7 +34,7 @@
 }
 
 .links-details {
-    margin: 25px 25px 0px 35px;
+    margin: 25px;
 }
 
 .label-color {
@@ -43,18 +43,12 @@
 
 .shoe-image-container {
     border: 1px solid #2E2926;
+    background-color: white;
 }
 
 .shoe-details-container {
+    background-color: white;
     border: 1px solid #2E2926;
-}
-
-.shoe-image-container {
-    background-color: white;
-}
-
-.shoe-details-container {
-    background-color: white;
 }
 
 a:visited {
@@ -67,9 +61,9 @@ a:hover {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .links-details {
-        margin: 25px 0px 30px 35px;
-    }
+    // .links-details {
+    //     margin: 25px 0px 30px 35px;
+    // }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -81,6 +75,9 @@ a:hover {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+    .main-container {
+        padding: 120px 150px 0px 150px;
+    }
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */

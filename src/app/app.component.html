@@ -36,8 +36,13 @@
       role="region">
     <app-side-nav (searchModelChange)=updateSearchModel($event)></app-side-nav>
   </mat-sidenav>
-  <mat-sidenav-content role="region">
-    <router-outlet></router-outlet>
+  <mat-sidenav-content role="region" fxLayout="column" fxFlexFill>
+    <div class="container">
+      <div class="row">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
